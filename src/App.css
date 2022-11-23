@@ -1,0 +1,11 @@
+header{
+    /* flex-direction: row; */
+}
+main {
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 85vw;
+}
+.main-content-container{
+    padding: 4rem 8rem;
+}
