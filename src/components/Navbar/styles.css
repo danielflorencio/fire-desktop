@@ -1,0 +1,36 @@
+/* .navbar{
+    margin: 0%;
+    width: 15vw;
+    height: 100vh;
+    background-color: rgb(14, 14, 14);
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+nav > ul{
+    margin: 0%;
+    padding: 0%;
+}
+nav > ul > li{
+    width: 80%;
+    height: 8vh;
+    background-color: rgb(39, 39, 39);
+    content: 'some content';
+    color: white;
+    margin: 15px 5px;
+    list-style: none;
+    border-radius: 8px;
+    padding: 0%;
+} */

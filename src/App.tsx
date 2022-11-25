@@ -1,18 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import { Button } from 'react-bootstrap';
-import Navbar from './components/Navbar/Navbar';
 import './App.css'
-
+import Sidebar from './components/Sidebar/Sidebar';
+import CiCalculator from './components/CiCalc/CiCalc';
 function App() {
 
   return (
     <>
-      <Navbar/> 
+      <Sidebar/> 
       <main>
         <div className='main-content-container'>
-          <h1>Test</h1>
-          <Button variant='primary'>Primary</Button>
+          <CiCalculator/>
         </div>
       </main>
     </>

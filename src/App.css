@@ -1,5 +1,5 @@
 header{
-    /* flex-direction: row; */
+    flex-direction: row;
 }
 main {
     min-height: 100vh;
@@ -7,5 +7,23 @@ main {
     width: 85vw;
 }
 .main-content-container{
-    padding: 4rem 8rem;
+    padding: 3rem 6rem;
+    /* border: 1px solid grey; */
+} 
+.box-content-container{
+    padding: 1rem 2rem;
+    min-width: 16rem;
+    max-width: 20rem;
+    min-height: 16rem;
+    border: 1px solid grey;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    display: block;
+    margin: 1rem 0rem;
+}
+input{ 
+    display: block;
 }
