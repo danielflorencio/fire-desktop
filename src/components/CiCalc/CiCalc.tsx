@@ -1,26 +1,77 @@
-import { useState } from "react"
+import { useState, ChangeEvent, FC, FormEvent } from "react"
 import Button from "../Button/Button"
-export default function CiCalculator(){
-    const [initialAmount, setinitialAmount] = useState('')
-    const [monthlyInvestment, setmonthlyInvestment] = useState('')
-    const [howLong, sethowLong] = useState('')
-    const [result, setResult] = useState('')    
+
+type FormData = {
+    initialAmount: number;
+}
+
+const INITIAL_DATA = {
+    initialAmount: 0
+}
+
+export default function CiCalculator({initialAmount}: FormData){
+    const [data, setData] = useState(INITIAL_DATA)
+    // let [initialAmount, setinitialAmount] = useState<number>(0)
+    // let [monthlyInvestment, setmonthlyInvestment] = useState<number>(0)
+    // let [howLong, sethowLong] = useState<number>(0)
+    // let [result, setResult] = useState<number>(0)
+    // let [stringInitialAmount, setStringInitialAmount] = useState<string>('')
+    // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    //     setinitialAmount(event.target.value)
+    // }
+
+
+
+    // const handleSubmit = (e: ChangeEvent<HTMLInputElement>) => {
+    //     e.preventDefault();
+    //     setStringInitialAmount(e.target.value);
+    //     setinitialAmount(parseFloat(stringInitialAmount))
+    //     setResult(initialAmount*2);
+
+    // }
+
+    function handleinitialAmountChange(e: InputEvent){
+        setinitialAmount(e.target.value);
+    }
+
+    function onSubmit(e: FormEvent){
+        e.preventDefault();
+        // setinitialAmount(e.target.value)
+    }
     
+
+
     return(
         <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
             <h4>Compound Interest Calculator</h4>
-            <form>
-                <label>Initial value: <input type='number'></input></label>
-                <label>Monthly Contribution: <input type='number'></input></label>
-                <label>Monthly Yield: <input type='number'></input></label>
-                <label>Time: <input type='number'></input></label>
-                <button className="btn btn-primary">Call to action</button>
+            <form onSubmit={handleSubmit}>
+                <label>Initial value: <input type='number' onChange={handleinitialAmountChange} value={initialAmount}></input></label>
+                {/* <label>Monthly Contribution: <input type='number'></input></label> */}
+                {/* <label>Monthly Yield: <input type='number'></input></label> */}
+                {/* <label>Time: <input type='number'></input></label> */}
+                <button type='submit' className="btn btn-primary">Call to action</button>
             </form>
         </div>
     )
 }
 
+interface Props {
+    result: number;
+    months: number;
+}
+export const Answer: FC<Props> = ({result, months}) => {
 
+    // The piece of code below sets the type of the state.
+
+    const [howGood, setHowGood] = useState<string | null>("Great") // Using '| null' on the type makes it so the null stype is also accepted, even though the state type is not boolean.
+
+    return (
+        <div>
+            <h2>The result is {result}</h2>
+            <h2>The time taken was {months} months</h2>
+        </div>
+    )
+}
 
 
 
