@@ -7,7 +7,7 @@ type FormData = {
 
 const INITIAL_DATA = {
     initialAmount: 0
-}
+} 
 
 export default function CiCalculator({initialAmount}: FormData){
     const [data, setData] = useState(INITIAL_DATA)
@@ -30,9 +30,9 @@ export default function CiCalculator({initialAmount}: FormData){
 
     // }
 
-    function handleinitialAmountChange(e: InputEvent){
-        setinitialAmount(e.target.value);
-    }
+    // function handleinitialAmountChange(e: InputEvent){
+    //     setinitialAmount(e.target.value);
+    // }
 
     function onSubmit(e: FormEvent){
         e.preventDefault();
@@ -44,11 +44,11 @@ export default function CiCalculator({initialAmount}: FormData){
     return(
         <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
             <h4>Compound Interest Calculator</h4>
-            <form onSubmit={handleSubmit}>
-                <label>Initial value: <input type='number' onChange={handleinitialAmountChange} value={initialAmount}></input></label>
-                {/* <label>Monthly Contribution: <input type='number'></input></label> */}
-                {/* <label>Monthly Yield: <input type='number'></input></label> */}
-                {/* <label>Time: <input type='number'></input></label> */}
+            <form>
+                <label>Initial value: <input type='number' value={initialAmount}></input></label>
+                <label>Monthly Contribution: <input type='number'></input></label>
+                <label>Monthly Yield: <input type='number'></input></label>
+                <label>Time: <input type='number'></input></label>
                 <button type='submit' className="btn btn-primary">Call to action</button>
             </form>
         </div>

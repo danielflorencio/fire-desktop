@@ -13,7 +13,7 @@ function App() {
       <main className='overflow-auto'>
         <div className='main-content-container'>
           <Routes>
-            <Route path='/' element={<HomePage/>}/>
+            <Route path='/' element={<HomePage pageTitle='Welcome to the Fire Advisor.' subtitle='This is where your financial freedom begins.'/>}/>
             <Route path='expenses' element={<ExpenseTracker/>}/>
             <Route path='CompoundInterestCalculator' element={<CiCalculator/>}/>
           </Routes>

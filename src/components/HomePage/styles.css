@@ -1,0 +1,9 @@
+.options-container{
+    border-radius: 8px;
+    border: 1px solid grey;
+    width: 100%;
+    min-height: 70vh;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
