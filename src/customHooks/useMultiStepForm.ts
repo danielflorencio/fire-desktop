@@ -4,6 +4,9 @@
 
 // The hook is gonna be responsible to make sure all the states work.
 
+// Class on this hook: https://www.youtube.com/watch?v=uDCBSnWkuH0&t=3s
+
+
 import { ReactElement, useState } from "react";
 
 export function useMultiStepForm(steps: ReactElement[]){
@@ -29,6 +32,8 @@ export function useMultiStepForm(steps: ReactElement[]){
     return { // Notice that ts file returns aways need {} and not () different from tsx or jsx.
         currentStepIndex,
         step: steps[currentStepIndex],
+        steps,
+        isAnswerStep: currentStepIndex === 1,
         goTo,
         next,
         back,

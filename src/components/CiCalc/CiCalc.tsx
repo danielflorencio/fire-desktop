@@ -1,16 +1,106 @@
 import { useState, ChangeEvent, FC, FormEvent } from "react"
+import { useMultiStepForm } from "../../customHooks/useMultiStepForm";
 import Button from "../Button/Button"
+import CiGraph from '../AnswerGraph/CiGraph'
+import { Next } from "react-bootstrap/esm/PageItem";
+
+// Stopped the class at 9:30 
 
 type FormData = {
-    initialAmount: number;
+    initialAmount: number,
+    monthlyInvestment: number
 }
 
-const INITIAL_DATA = {
-    initialAmount: 0
-} 
+const INITIAL_DATA: FormData = {
+    initialAmount: 0,
+    monthlyInvestment: 0
+}
 
 export default function CiCalculator({initialAmount}: FormData){
     const [data, setData] = useState(INITIAL_DATA)
+    function updateFields(fields: Partial<FormData>){ // The Partial type allows you to use only a partial version of another certain type.
+        setData(prev => {
+            return { ...prev, fields} // This function takes the previous data from the last field render and overrides that data with the new data.
+        })
+    }
+    const { steps, currentStepIndex, step, isAnswerStep, back, next } = useMultiStepForm([
+    <CiForm {...data} updateFields={updateFields}/>, 
+    <CiGraph {...data}/>]) // Passing the data to all components
+ 
+    
+    function handleSubmit(e: FormEvent){
+        e.preventDefault()
+        next()
+    }
+
+    return(
+        <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
+            <h4>Ci Cal Step {currentStepIndex + 1} / {steps.length}</h4>
+            {/* {step} */}
+            <form onSubmit={handleSubmit}>
+                <label>Initial value: <input type='number' autoFocus required></input></label>
+                <label>Monthly Contribution: <input type='number' required></input></label>
+                <label>Monthly Yield: <input type='number' required></input></label>
+                <label>Time: <input type='number' required></input></label>
+                <button type='submit' className="btn btn-primary">Call to action</button>
+            </form>
+            {isAnswerStep && <button onClick={back}>New Simulation</button>}
+        </div>
+    )
+}
+
+
+type SimulationData = {
+    initialAmount: number,
+    monthlyInvestment: number
+}
+
+type SimulationFormProps = SimulationData & {
+    updateFields: (fields: Partial<SimulationData>) => void 
+}
+
+function CiForm({initialAmount, updateFields} : SimulationFormProps){
+    
+    return(
+        <form onSubmit={handleSubmit}>
+            <label>Initial value: <input type='number' value={initialAmount} autoFocus required></input></label>
+            {/* <label>Monthly Contribution: <input type='number' required></input></label>
+            <label>Monthly Yield: <input type='number' required></input></label>
+            <label>Time: <input type='number' required></input></label> */}
+            <button type='submit' className="btn btn-primary">Call to action</button>
+        </form>
+    )
+}
+
+
+
+
+interface Props {
+    result: number;
+    months: number;
+}
+export const Answer: FC<Props> = ({result, months}) => {
+
+    // The piece of code below sets the type of the state.
+
+    const [howGood, setHowGood] = useState<string | null>("Great") // Using '| null' on the type makes it so the null stype is also accepted, even though the state type is not boolean.
+
+    return (
+        <div>
+            <h2>The result is {result}</h2>
+            <h2>The time taken was {months} months</h2>
+        </div>
+    )
+}
+
+// function CiForm({initialAmount} : SimulationFormProps){
+    
+
+
+
+
+    
+    // const [data, setData] = useState(INITIAL_DATA)
     // let [initialAmount, setinitialAmount] = useState<number>(0)
     // let [monthlyInvestment, setmonthlyInvestment] = useState<number>(0)
     // let [howLong, sethowLong] = useState<number>(0)
@@ -31,56 +121,44 @@ export default function CiCalculator({initialAmount}: FormData){
     // }
 
     // function handleinitialAmountChange(e: InputEvent){
-    //     setinitialAmount(e.target.value);
-    // }
+//     //     setinitialAmount(e.target.value);
+//     // }
 
-    function onSubmit(e: FormEvent){
-        e.preventDefault();
-        // setinitialAmount(e.target.value)
-    }
-    
-
-
-    return(
-        <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
-            <h4>Compound Interest Calculator</h4>
-            <form>
-                <label>Initial value: <input type='number' value={initialAmount}></input></label>
-                <label>Monthly Contribution: <input type='number'></input></label>
-                <label>Monthly Yield: <input type='number'></input></label>
-                <label>Time: <input type='number'></input></label>
-                <button type='submit' className="btn btn-primary">Call to action</button>
-            </form>
-        </div>
-    )
-}
-
-interface Props {
-    result: number;
-    months: number;
-}
-export const Answer: FC<Props> = ({result, months}) => {
-
-    // The piece of code below sets the type of the state.
-
-    const [howGood, setHowGood] = useState<string | null>("Great") // Using '| null' on the type makes it so the null stype is also accepted, even though the state type is not boolean.
-
-    return (
-        <div>
-            <h2>The result is {result}</h2>
-            <h2>The time taken was {months} months</h2>
-        </div>
-    )
-}
+//     function handleSubmit(e: FormEvent){
+//         e.preventDefault()
+//         Next()
+//     }
+//     return(
+//         <form onSubmit={handleSubmit}>
+//             <label>Initial value: <input type='number' autoFocus required></input></label>
+//             <label>Monthly Contribution: <input type='number' required></input></label>
+//             <label>Monthly Yield: <input type='number' required></input></label>
+//             <label>Time: <input type='number' required></input></label>
+//             <button type='submit' className="btn btn-primary">Call to action</button>
+//         </form>
+//     )
+// }
 
 
 
 
+// interface Props {
+//     result: number;
+//     months: number;
+// }
+// export const Answer: FC<Props> = ({result, months}) => {
 
+//     // The piece of code below sets the type of the state.
 
+//     const [howGood, setHowGood] = useState<string | null>("Great") // Using '| null' on the type makes it so the null stype is also accepted, even though the state type is not boolean.
 
-
-
+//     return (
+//         <div>
+//             <h2>The result is {result}</h2>
+//             <h2>The time taken was {months} months</h2>
+//         </div>
+//     )
+// }
 
 
 
