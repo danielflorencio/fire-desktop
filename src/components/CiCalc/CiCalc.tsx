@@ -1,28 +1,39 @@
 import { useState, ChangeEvent, FC, FormEvent } from "react"
 import { useMultiStepForm } from "../../customHooks/useMultiStepForm";
-import Button from "../Button/Button"
 import CiGraph from '../AnswerGraph/CiGraph'
-import { Next } from "react-bootstrap/esm/PageItem";
-
-// Stopped the class at 9:30 
 
 type FormData = {
-    initialAmount: number,
-    monthlyInvestment: number
+    initialAmount?: number,
+    monthlyInvestment?: number,
+    howLongM?: number,
+    result?: number
 }
 
 const INITIAL_DATA: FormData = {
     initialAmount: 0,
-    monthlyInvestment: 0
+    monthlyInvestment: 0,
+    howLongM: 0,
+    result: 0
 }
 
-export default function CiCalculator({initialAmount}: FormData){
+
+
+
+// export default function CiCalculator({initialAmount}: FormData){
+export default function CiCalculator(){
+
     const [data, setData] = useState(INITIAL_DATA)
+
+    // const [result, setResult] = useState(0)
+    // const [howLong, sethowLong] = useState(0)
+
+
     function updateFields(fields: Partial<FormData>){ // The Partial type allows you to use only a partial version of another certain type.
         setData(prev => {
-            return { ...prev, fields} // This function takes the previous data from the last field render and overrides that data with the new data.
+            return { ...prev, ...fields} // This function takes the previous data from the last field render and overrides that data with the new data.
         })
     }
+
     const { steps, currentStepIndex, step, isAnswerStep, back, next } = useMultiStepForm([
     <CiForm {...data} updateFields={updateFields}/>, 
     <CiGraph {...data}/>]) // Passing the data to all components
@@ -30,45 +41,61 @@ export default function CiCalculator({initialAmount}: FormData){
     
     function handleSubmit(e: FormEvent){
         e.preventDefault()
+
+        setData()
+        // console.log(INITIAL_DATA.initialAmount)
+        // setResult((INITIAL_DATA.initialAmount)*howLong)
+        
+        
         next()
+    }
+
+    function handleSimulation(e: FormEvent){
+        e.preventDefault()
     }
 
     return(
         <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
             <h4>Ci Cal Step {currentStepIndex + 1} / {steps.length}</h4>
-            {/* {step} */}
+            {currentStepIndex === 0 ? (
             <form onSubmit={handleSubmit}>
-                <label>Initial value: <input type='number' autoFocus required></input></label>
-                <label>Monthly Contribution: <input type='number' required></input></label>
-                <label>Monthly Yield: <input type='number' required></input></label>
-                <label>Time: <input type='number' required></input></label>
-                <button type='submit' className="btn btn-primary">Call to action</button>
+                {step}
+                <button className='btn btn-primary' type='submit'>Do it</button>
             </form>
-            {isAnswerStep && <button onClick={back}>New Simulation</button>}
+            ) : (
+                <>
+                {step}
+                <button className='btn btn-primary' onClick={back}>return</button>
+                </>
+                )
+            
+            }                        
         </div>
     )
 }
 
 
 type SimulationData = {
-    initialAmount: number,
-    monthlyInvestment: number
+    initialAmount?: number,
+    monthlyInvestment?: number,
+    howLongM?: 0,
+    result?: 0    
 }
 
-type SimulationFormProps = SimulationData & {
+export type SimulationFormProps = SimulationData & {
     updateFields: (fields: Partial<SimulationData>) => void 
 }
 
-function CiForm({initialAmount, updateFields} : SimulationFormProps){
+export function CiForm({initialAmount, updateFields} : SimulationFormProps){
     
     return(
-        <form onSubmit={handleSubmit}>
-            <label>Initial value: <input type='number' value={initialAmount} autoFocus required></input></label>
-            {/* <label>Monthly Contribution: <input type='number' required></input></label>
-            <label>Monthly Yield: <input type='number' required></input></label>
-            <label>Time: <input type='number' required></input></label> */}
-            <button type='submit' className="btn btn-primary">Call to action</button>
-        </form>
+        <label>Initial value: <input 
+        type='number' 
+        value={initialAmount}
+        onChange={e => updateFields({ initialAmount: e.target.valueAsNumber })} 
+        autoFocus 
+        required></input></label>
+         // <button type='submit' className="btn btn-primary">Call to action</button>
     )
 }
 
@@ -92,6 +119,37 @@ export const Answer: FC<Props> = ({result, months}) => {
         </div>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function CiForm({initialAmount} : SimulationFormProps){
     

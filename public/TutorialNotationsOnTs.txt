@@ -20,3 +20,8 @@ interface Props {
     name: string;
     getName: (name: string) => string;
 }
+
+---------------------------------------
+Type Vs Interface
+
+
