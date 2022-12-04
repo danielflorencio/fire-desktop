@@ -40,6 +40,18 @@ export default function Sidebar(){
                 Crypto Market
                 </a>
             </li>
+            <li>
+                <a href="#" className="nav-link text-white">
+                <svg className="bi pe-none me-2" width="16" height="16"></svg>
+                Support us
+                </a>
+            </li>
+            <li>
+                <a href="#" className="nav-link text-white">
+                <svg className="bi pe-none me-2" width="16" height="16"></svg>
+                Support the World future
+                </a>
+            </li>
             </ul>
             <hr/>
             <div className="dropdown">

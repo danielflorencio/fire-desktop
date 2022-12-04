@@ -6,6 +6,14 @@ import HomePage from './components/HomePage/HomePage';
 import { Route, Routes} from 'react-router-dom'
 
 function App() {
+  // return(
+  //   <main className='overflow-auto'>
+  //     <div className='main-content-container'>
+  //       <ExpenseTracker/>
+  //     </div>
+  //   </main>
+  // )
+  
   return (
     <>
       <Sidebar/>
