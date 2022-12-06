@@ -1,8 +1,8 @@
 import { Expense } from "../types/expense";
 export const getCurrentMonth = (): string => {
     let now = new Date();
-    let newDate = now.getFullYear()-(now.getMonth()+1);
-    let stringDate = newDate.toString();
+    // let newDate = now.getFullYear()-(now.getMonth()+1);
+    // let stringDate = newDate.toString();
 
     return `${now.getFullYear()}-${now.getMonth()+1}`
     // return toString((now.getFullYear()-(now.getMonth()+1)))
@@ -16,12 +16,15 @@ export const filterListByMonth = (list: Expense[], date: string): Expense[] => {
     
     // for(let i = 0; i < list.length; i++){
     for (let i in list){
-        console.log('for loop in filterlist being called.')
+        console.log('--------------------------------------')
         console.log('list item number ', i, ' year === ', list[i].date.getFullYear())
-        console.log('list item number ', i, ' month === ', (list[i].date.getMonth() + 1))
+        console.log('list item number ', i, ' month === ', list[i].date.getMonth())
+        console.log('full date ', list[i].date.getDate())
+        console.log('year variable value === ', year)
+        console.log('month variable value === ' , (parseInt(month) - 1))
         if(
-            list[i].date.getFullYear() === parseInt(year) &&
-            (list[i].date.getMonth() + 1) === parseInt(month)
+            (list[i].date.getFullYear()) === parseInt(year) &&
+            list[i].date.getMonth()  === (parseInt(month) - 1)
         ) {
             console.log('conditional in for loop being true.')
             newList.push(list[i])
