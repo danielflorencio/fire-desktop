@@ -13,14 +13,18 @@ export const filterListByMonth = (list: Expense[], date: string): Expense[] => {
     let newList: Expense[] = [];
     let [year, month] = date.split('-');
     
-    for(let i in list){
+    for(let i = 0; i < list.length; i++){
         if(
             list[i].date.getFullYear() === parseInt(year) &&
             (list[i].date.getMonth() + 1) === parseInt(month)
         ) {
             newList.push(list[i])
+            console.log('newList ', i, ' ', newList)
         }
     }
+    // console.log('date ', Date())
+    // console.log('newlist ', newList)
+    console.log(newList)
     return newList;
 }
 

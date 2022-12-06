@@ -31,6 +31,18 @@ export default function Sidebar(){
             <li>
                 <a href="#" className="nav-link text-white">
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
+                Productivity Booster
+                </a>
+            </li>
+            <li>
+                <a href="#" className="nav-link text-white">
+                <svg className="bi pe-none me-2" width="16" height="16"></svg>
+                Feedback
+                </a>
+            </li>
+            {/* <li>
+                <a href="#" className="nav-link text-white">
+                <svg className="bi pe-none me-2" width="16" height="16"></svg>
                 Stock Market
                 </a>
             </li>
@@ -39,7 +51,7 @@ export default function Sidebar(){
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
                 Crypto Market
                 </a>
-            </li>
+            </li> */}
             <li>
                 <a href="#" className="nav-link text-white">
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
@@ -49,7 +61,13 @@ export default function Sidebar(){
             <li>
                 <a href="#" className="nav-link text-white">
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
-                Support the World future
+                Charity
+                </a>
+            </li>
+            <li>
+                <a href="#" className="nav-link text-white">
+                <svg className="bi pe-none me-2" width="16" height="16"></svg>
+                Feedback
                 </a>
             </li>
             </ul>

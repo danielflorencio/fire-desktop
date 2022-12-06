@@ -24,7 +24,7 @@ export default function ExpenseTracker(){
     return(
     <>
         <h1 className='text-center' style={{marginBottom: '60px'}}>Expense Tracker</h1>        
-        <ExpensesTable/>
+        <ExpensesTable list={filteredList}/> {/*  */}
     </>
     )
 }
