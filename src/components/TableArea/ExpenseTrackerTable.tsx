@@ -35,7 +35,7 @@ export const ExpensesTable = ({list}: Props) => {
                     list.map((expense, index) =>(
                         <div key={index} className='table-row'>
                             <div className='table-item-container'><div className='table-item'>{formatDate(expense.date)}</div></div> {/* Note: it is important to remember that the value for month showed in the date prop must be shown with one added. */}
-                            <div className='table-item-container'><div className='table-item' style={{backgroundColor: `${categories[expense.category].color}`}}>{categories[expense.category].title}</div></div>
+                            <div className='table-item-container'><div className='table-item' style={{backgroundColor: `${categories[expense.category].bgColor}`, color: `${categories[expense.category].color}`}}>{categories[expense.category].title}</div></div>
                             <div className='table-item-container'><div className='table-item'>{expense.title}</div></div>
                             <div className='table-item-container'><div className='table-item'>{expense.value}</div></div>
                         </div>
