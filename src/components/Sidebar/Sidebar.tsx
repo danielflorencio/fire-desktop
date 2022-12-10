@@ -28,12 +28,12 @@ export default function Sidebar(){
                 Calculators
                 </a>
             </li>
-            <li>
+            {/* <li>
                 <a href="#" className="nav-link text-white">
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
                 Productivity Booster
                 </a>
-            </li>
+            </li> */}
             <li>
                 <a href="#" className="nav-link text-white">
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
@@ -52,24 +52,24 @@ export default function Sidebar(){
                 Crypto Market
                 </a>
             </li> */}
-            <li>
+            {/* <li>
                 <a href="#" className="nav-link text-white">
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
                 Support us
                 </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
                 <a href="#" className="nav-link text-white">
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
                 Charity
                 </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
                 <a href="#" className="nav-link text-white">
                 <svg className="bi pe-none me-2" width="16" height="16"></svg>
                 Feedback
                 </a>
-            </li>
+            </li> */}
             </ul>
             <hr/>
             <div className="dropdown">

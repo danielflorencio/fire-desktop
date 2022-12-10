@@ -5,6 +5,7 @@ import { expenses } from '../../data/expenses'
 import { useState, useEffect } from 'react'
 import { getCurrentMonth, filterListByMonth } from '../../helpers/dateFilter'
 import { ExpensesTable } from '../TableArea/ExpenseTrackerTable'
+import InfoArea from '../InfoArea/InfoArea'
 export default function ExpenseTracker(){
     const [list, setList] = useState<Expense[]>(expenses); 
 
@@ -21,9 +22,14 @@ export default function ExpenseTracker(){
     }, [list, currentMonth] ) // This last argument in the useEffect determines what we are going to monitor changes.
     // Search later the video where Kyle (web dev simplified) says it's not good practice to use useEffect.
 
+    const handleMonthChange = (newMonth: string) => {
+        setCurrentMonth(newMonth)
+    }
+
     return(
     <>
-        <h1 className='text-center' style={{marginBottom: '60px'}}>Expense Tracker</h1>        
+        <h1 className='text-center' style={{marginBottom: '45px'}}>Expense Tracker</h1>  
+        <InfoArea onMonthChange={handleMonthChange} currentMonth={currentMonth}/>      
         <ExpensesTable list={filteredList}/> {/*  */}
     </>
     )
