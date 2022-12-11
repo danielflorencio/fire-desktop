@@ -11,4 +11,6 @@
 .info-area-container > i{
     margin: 0 2vw;   
 }
-
+.resume-area{
+    display: flex;
+}

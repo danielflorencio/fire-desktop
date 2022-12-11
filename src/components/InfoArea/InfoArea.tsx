@@ -2,13 +2,15 @@ import './styles.css'
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
 import { BsFillArrowRightCircleFill} from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib'
-
+import ResumeExpenses from '../ResumeExpenses/ResumeExpenses'
 type Props = {
     currentMonth: string,
     onMonthChange: (newMonth: string) => void;
+    income: number;
+    expense: number;
 }
 
-export default function InfoArea({currentMonth, onMonthChange} : Props){
+export default function InfoArea({currentMonth, onMonthChange, income, expense} : Props){
     
     const handlePrevMonth = () => {
         let [year, month] = currentMonth.split('-');
@@ -22,7 +24,6 @@ export default function InfoArea({currentMonth, onMonthChange} : Props){
         let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
         currentDate.setMonth(currentDate.getMonth() + 1);
         onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`)
-        console.log('test worked')
     }
 
     return(
@@ -38,6 +39,11 @@ export default function InfoArea({currentMonth, onMonthChange} : Props){
                     <BsFillArrowRightCircleFill/>
                 </IconContext.Provider>
             </i>
+            <div className='resume-area'>
+                <ResumeExpenses title='Revenue' value={income}/>
+                <ResumeExpenses title='Expenditure' value={expense}/>
+                <ResumeExpenses title='Balance' value={income - expense}/>
+            </div>
         </div>
     )
 }

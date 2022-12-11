@@ -17,10 +17,29 @@ export default function ExpenseTracker(){
 
     const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
 
+    const [income, setIncome] = useState(0);
+    const [expense, setExpense] = useState(0);
+
     useEffect(() => {
         setFilteredList(filterListByMonth(list, currentMonth))
     }, [list, currentMonth] ) // This last argument in the useEffect determines what we are going to monitor changes.
     // Search later the video where Kyle (web dev simplified) says it's not good practice to use useEffect.
+
+    useEffect(() => {
+        let incomeCount = 0;
+        let expenseCount = 0;
+
+        for (let i in filteredList) {
+            if (categories[filteredList[i].category].expense){
+                expenseCount += filteredList[i].value
+            } else{
+                incomeCount += filteredList[i].value
+            }
+        }
+
+        setIncome(incomeCount);
+        setExpense(expenseCount)
+    },[filteredList])
 
     const handleMonthChange = (newMonth: string) => {
         setCurrentMonth(newMonth)
@@ -29,7 +48,12 @@ export default function ExpenseTracker(){
     return(
     <>
         <h1 className='text-center' style={{marginBottom: '45px'}}>Expense Tracker</h1>  
-        <InfoArea onMonthChange={handleMonthChange} currentMonth={currentMonth}/>      
+        <InfoArea 
+        onMonthChange={handleMonthChange} 
+        currentMonth={currentMonth}
+        income={income}
+        expense={expense}
+        />      
         <ExpensesTable list={filteredList}/> {/*  */}
     </>
     )
