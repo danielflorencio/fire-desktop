@@ -8,9 +8,23 @@
     align-items: center;
     justify-content: space-between;
 }
+.month-selector-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
 .info-area-container > i{
     margin: 0 2vw;   
 }
 .resume-area{
     display: flex;
+    width: 50%;
+    padding-top: 1vh;
+    padding-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    /* padding: 0 2rem; */
+    align-items: center;
+    justify-content: space-around;
 }

@@ -1,37 +1,29 @@
-import { useState, ChangeEvent, FC, FormEvent } from "react"
+import { useState, useEffect, ChangeEvent, FC, FormEvent } from "react"
 import { useMultiStepForm } from "../../customHooks/useMultiStepForm";
 import CiGraph from '../AnswerGraph/CiGraph'
 
 type FormData = {
-    initialAmount?: number,
-    monthlyInvestment?: number,
-    howLongM?: number,
-    result?: number
+    amount: number,
+    investment: number,
+    howLongM: number
 }
 
 const INITIAL_DATA: FormData = {
-    initialAmount: 0,
-    monthlyInvestment: 0,
-    howLongM: 0,
-    result: 0
+    amount: 0,
+    investment: 0,
+    howLongM: 0
 }
 
-
-
-
-// export default function CiCalculator({initialAmount}: FormData){
 export default function CiCalculator(){
 
-    const [data, setData] = useState(INITIAL_DATA)
-
-    // const [result, setResult] = useState(0)
-    // const [howLong, sethowLong] = useState(0)
-
+    const [data, setData] = useState(INITIAL_DATA);
+    const [result, setResult] = useState(0);
 
     function updateFields(fields: Partial<FormData>){ // The Partial type allows you to use only a partial version of another certain type.
         setData(prev => {
             return { ...prev, ...fields} // This function takes the previous data from the last field render and overrides that data with the new data.
         })
+        console.log(data)
     }
 
     const { steps, currentStepIndex, step, isAnswerStep, back, next } = useMultiStepForm([
@@ -41,18 +33,22 @@ export default function CiCalculator(){
     
     function handleSubmit(e: FormEvent){
         e.preventDefault()
-
-        setData()
-        // console.log(INITIAL_DATA.initialAmount)
-        // setResult((INITIAL_DATA.initialAmount)*howLong)
-        
-        
+        // setData(e.target.value)
         next()
     }
 
     function handleSimulation(e: FormEvent){
         e.preventDefault()
     }
+
+    // useEffect(() => {
+    //     let resultCount = 0
+    //     for (let i = 0; i < INITIAL_DATA.howLongM; i++){
+    //         resultCount += INITIAL_DATA.amount*INITIAL_DATA.investment;
+    //     }
+    //     setResult(resultCount)
+    //     console.log(result)
+    // }, [data])
 
     return(
         <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
@@ -76,25 +72,40 @@ export default function CiCalculator(){
 
 
 type SimulationData = {
-    initialAmount?: number,
-    monthlyInvestment?: number,
-    howLongM?: 0,
-    result?: 0    
+    amount: number,
+    investment: number,
+    howLongM: number
 }
 
 export type SimulationFormProps = SimulationData & {
     updateFields: (fields: Partial<SimulationData>) => void 
 }
 
-export function CiForm({initialAmount, updateFields} : SimulationFormProps){
+export function CiForm({amount, howLongM, investment, updateFields} : SimulationFormProps){
     
     return(
-        <label>Initial value: <input 
-        type='number' 
-        value={initialAmount}
-        onChange={e => updateFields({ initialAmount: e.target.valueAsNumber })} 
-        autoFocus 
-        required></input></label>
+        <>
+            <label>Initial value: <input 
+            type='number' 
+            value={amount}
+            onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
+            autoFocus 
+            required></input></label>
+
+            <label>Time: <input 
+            type='number' 
+            value={howLongM}
+            onChange={e => updateFields({ howLongM: e.target.valueAsNumber })} 
+            autoFocus 
+            required></input></label>
+
+            <label>Monthly Investment: <input 
+            type='number' 
+            value={investment}
+            onChange={e => updateFields({ investment: e.target.valueAsNumber })} 
+            autoFocus 
+            required></input></label>
+        </>
          // <button type='submit' className="btn btn-primary">Call to action</button>
     )
 }
@@ -102,23 +113,23 @@ export function CiForm({initialAmount, updateFields} : SimulationFormProps){
 
 
 
-interface Props {
-    result: number;
-    months: number;
-}
-export const Answer: FC<Props> = ({result, months}) => {
+// interface Props {
+//     result: number;
+//     months: number;
+// }
+// export const Answer: FC<Props> = ({result, months}) => {
 
-    // The piece of code below sets the type of the state.
+//     // The piece of code below sets the type of the state.
 
-    const [howGood, setHowGood] = useState<string | null>("Great") // Using '| null' on the type makes it so the null stype is also accepted, even though the state type is not boolean.
+//     const [howGood, setHowGood] = useState<string | null>("Great") // Using '| null' on the type makes it so the null stype is also accepted, even though the state type is not boolean.
 
-    return (
-        <div>
-            <h2>The result is {result}</h2>
-            <h2>The time taken was {months} months</h2>
-        </div>
-    )
-}
+//     return (
+//         <div>
+//             <h2>The result is {result}</h2>
+//             <h2>The time taken was {months} months</h2>
+//         </div>
+//     )
+// }
 
 
 

@@ -28,7 +28,7 @@ export default function ExpenseTracker(){
     useEffect(() => {
         let incomeCount = 0;
         let expenseCount = 0;
-
+        
         for (let i in filteredList) {
             if (categories[filteredList[i].category].expense){
                 expenseCount += filteredList[i].value

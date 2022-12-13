@@ -28,20 +28,22 @@ export default function InfoArea({currentMonth, onMonthChange, income, expense} 
 
     return(
         <div className="info-area-container">
-            <i onClick={handlePrevMonth} style={{cursor: 'pointer'}}>
-                <IconContext.Provider value={{ size: '1.6em'}}>
-                    <BsFillArrowLeftCircleFill/>
-                </IconContext.Provider>
-            </i>
-            <h4>{currentMonth}</h4>
-            <i onClick={handleNextMonth} style={{cursor: 'pointer'}}>
-                <IconContext.Provider value={{ size: '1.6em'}}>
-                    <BsFillArrowRightCircleFill/>
-                </IconContext.Provider>
-            </i>
+            <div className='month-selector-container' style={{width: '50%'}}>
+                <i onClick={handlePrevMonth} style={{cursor: 'pointer'}}>
+                    <IconContext.Provider value={{ size: '1.6em'}}>
+                        <BsFillArrowLeftCircleFill/>
+                    </IconContext.Provider>
+                </i>
+                <h4>{currentMonth}</h4>
+                <i onClick={handleNextMonth} style={{cursor: 'pointer'}}>
+                    <IconContext.Provider value={{ size: '1.6em'}}>
+                        <BsFillArrowRightCircleFill/>
+                    </IconContext.Provider>
+                </i>
+            </div>
             <div className='resume-area'>
                 <ResumeExpenses title='Revenue' value={income}/>
-                <ResumeExpenses title='Expenditure' value={expense}/>
+                <ResumeExpenses title='Expenses' value={expense}/>
                 <ResumeExpenses title='Balance' value={income - expense}/>
             </div>
         </div>
