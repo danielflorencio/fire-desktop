@@ -12,7 +12,7 @@ type Props = { // Everytime we pass props in React Typescript components, we hav
 export const ExpensesTable = ({list}: Props) => {
     return(
         <>
-            <table className='table'>
+            <div className='table'>
                 <div className='table-titles'>
                     <div className='table-title'><h2>Date</h2></div>
                     <div className='table-title'><h2>Category</h2></div>
@@ -31,7 +31,7 @@ export const ExpensesTable = ({list}: Props) => {
                     ))
                 }
 
-            </table>
+            </div>
         </>
     )
 }

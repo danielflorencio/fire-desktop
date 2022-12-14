@@ -15,11 +15,7 @@
 .table-row{
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px;
-    border-top: 1px;
-    border-style: solid;
-    padding: 2rem 0;
-    border: 0px;
+    padding: 0.7rem 0;
 }
 
 .table-item-container{height: 100%;}
