@@ -41,3 +41,8 @@ export const formatDate = (date: Date): string => {
     return `${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
 }
 const addZeroToDate = (n: number): string => n < 10 ? `0${n}` : `${n}`;
+
+export const newDateAdjusted = (dateField: string) => {
+    let [year, month, day] = dateField.split('-')
+    return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+}
