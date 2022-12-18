@@ -5,6 +5,7 @@ import { expenses } from '../../data/expenses'
 import { useState, useEffect } from 'react'
 import { getCurrentMonth, filterListByMonth } from '../../helpers/dateFilter'
 import { ExpensesTable } from '../TableArea/ExpenseTrackerTable'
+import AddExpense from '../AddExpenseForm/AddExpenseForm'
 import InfoArea from '../InfoArea/InfoArea'
 export default function ExpenseTracker(){
     const [list, setList] = useState<Expense[]>(expenses); 
@@ -45,6 +46,12 @@ export default function ExpenseTracker(){
         setCurrentMonth(newMonth)
     }
 
+    const handleAddExpense = (expense: Expense) => {
+        let newList = [...list];
+        newList.push(expense);
+        setList(newList);
+    }
+
     return(
     <>
         <h1 className='text-center' style={{marginBottom: '45px'}}>Expense Tracker</h1>  
@@ -53,7 +60,8 @@ export default function ExpenseTracker(){
         currentMonth={currentMonth}
         income={income}
         expense={expense}
-        />      
+        />    
+        <AddExpense onAdd={handleAddExpense}/>  
         <ExpensesTable list={filteredList}/> {/*  */}
     </>
     )

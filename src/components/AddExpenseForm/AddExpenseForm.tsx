@@ -55,13 +55,13 @@ export default function AddExpense({ onAdd }: Props){
     
     
     return(
-        <div className='main-container'>
+        <div className='info-area-container' style={{padding: '1vh 1vw'}}>
             <div>
-                <div>input title</div>
+                <div className='text-center'><strong>Date</strong></div>
                 <label><input type="date" value={dateField} onChange={e => setDateField(e.target.value)}></input></label>
             </div>
             <div>
-                <div>input title</div>
+                <div><strong>Category</strong></div>
                 <label>
                     <select>
                         <option></option>
@@ -74,16 +74,17 @@ export default function AddExpense({ onAdd }: Props){
                 </label>
             </div>
             <div>
-                <div>input title</div>
+                <div className='text-center'><strong>Title</strong></div>
                 <label><input type="text" value={titleField} onChange={e => setTitleField(e.target.value)}></input></label>
             </div>
             <div>
-                <div>input title</div>
-                <label><input type="number" value={valueField} onChange={e => setValueField(parseFloat(e.target.value))}></input></label>
+                <div className='text-center'><strong>Value</strong></div>
+                <label><input type="number" style={{width: '5vw'}} value={valueField} onChange={e => setValueField(parseFloat(e.target.value))}></input></label>
             </div>
             <div>
                 <label>
-                    <button onClick={handleAddEvent}></button>
+                    <br></br>
+                    <button className="btn btn-primary" onClick={handleAddEvent}>Add Expense</button>
                 </label>
             </div>
         </div>
