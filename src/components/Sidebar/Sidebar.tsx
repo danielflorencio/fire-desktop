@@ -1,6 +1,6 @@
 import './styles.css'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-import { Children, Component } from 'react';
+import { ReactElement } from 'react';
 import { AiFillHome } from 'react-icons/ai'
 import { FaMoneyBillWave } from 'react-icons/fa'
 import {AiFillCalculator, AiFillFire} from 'react-icons/ai'
@@ -14,66 +14,15 @@ export default function Sidebar(){
             </a>
             <hr/>
             <ul className="nav nav-pills flex-column mb-auto">
-            <li className="nav-item">
-                <a href="/" className="nav-link active" aria-current="page">
-                <svg className="bi pe-none me-2" width="16" height="16"><AiFillHome/></svg>
-                Home
-                </a>
-            </li>
-            <li>
-                <a href="/expenses" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"><FaMoneyBillWave/></svg>
-                Expenses
-                </a>
-            </li>
-            <li>
-                <a href="/CompoundInterestCalculator" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"><AiFillCalculator/></svg>
-                Calculators
-                </a>
-            </li>
-            {/* <li>
-                <a href="#" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"></svg>
-                Productivity Booster
-                </a>
-            </li> */}
-            {/* <li>
-                <a href="#" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"></svg>
-                Feedback
-                </a>
-            </li> */}
-            {/* <li>
-                <a href="#" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"></svg>
-                Stock Market
-                </a>
-            </li>
-            <li>
-                <a href="#" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"></svg>
-                Crypto Market
-                </a>
-            </li> */}
-            {/* <li>
-                <a href="#" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"></svg>
-                Support us
-                </a>
-            </li> */}
-            {/* <li>
-                <a href="#" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"></svg>
-                Charity
-                </a>
-            </li> */}
-            {/* <li>
-                <a href="#" className="nav-link text-white">
-                <svg className="bi pe-none me-2" width="16" height="16"></svg>
-                Feedback
-                </a>
-            </li> */}
+            <CustomLink to='/' name='Home' child={<AiFillHome/>}/>
+            <CustomLink to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
+            <CustomLink to='/CompoundInterestCalculator' name='Calculators' child={<AiFillCalculator/>}/>
+            {/* <CustomLink to='' name='Productivity Booster' child={}/> */}
+            {/* <CustomLink to='' name='Feedback' child={}/> */}
+            {/* <CustomLink to='' name='Stock Market' child={}/> */}
+            {/* <CustomLink to='' name='Crypto Market' child={}/> */}
+            {/* <CustomLink to='' name='Support us' child={}/> */}
+            {/* <CustomLink to='' name='Charity' child={}/> */}
             </ul>
             <hr/>
             <div className="dropdown">
@@ -93,17 +42,22 @@ export default function Sidebar(){
     )
 }
 
-interface Props {
-    to: string;
-    children: Component;
+type Props = {
+    to: string,
+    child: ReactElement,
+    name: string,
     anotherProp?: string; // ? Makes so the prop is not required
 }
 
-
-
-function CustomLink( props: Props ){
-    const path = window.location.pathname;
+function CustomLink({to, name, child}: Props ){ // https://www.youtube.com/watch?v=SLfhMt5OUPI&t=1031s
+    const resolvedPath = useResolvedPath(to);
+    const isActive = useMatch({path: resolvedPath.pathname})
     return(
-        <li><a href={props.to}>{props.children}</a></li>
+        <li>
+            <Link to={to} className={isActive ? 'nav-link active' : 'nav-link text-white'}>
+            <svg className="bi pe-none me-2" width="16" height="16">{child}</svg>
+            {name}
+            </Link>
+        </li>
     )
-}
+}   

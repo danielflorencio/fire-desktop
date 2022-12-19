@@ -1,5 +1,4 @@
 import { Expense } from '../../types/expense'
-import { Category } from '../../types/category'
 import { categories } from '../../data/categories'
 import { expenses } from '../../data/expenses'
 import { useState, useEffect } from 'react'
