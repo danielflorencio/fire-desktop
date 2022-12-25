@@ -6,6 +6,9 @@ import { getCurrentMonth, filterListByMonth } from '../../helpers/dateFilter'
 import { ExpensesTable } from '../TableArea/ExpenseTrackerTable'
 import AddExpense from '../AddExpenseForm/AddExpenseForm'
 import InfoArea from '../InfoArea/InfoArea'
+import { useSelector, useDispatch } from 'react-redux';
+import { setTotalBalance } from '../../features/balance/balanceSlice'
+// import { createSlice, increment } from './redux/slice';
 export default function ExpenseTracker(){
     const [list, setList] = useState<Expense[]>(expenses); 
 
@@ -14,11 +17,13 @@ export default function ExpenseTracker(){
     // It is not necessary because what i said two lines ago, but it might improve code readability.
     
     const [filteredList, setFilteredList] = useState<Expense[]>([]);
-
     const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
-
     const [income, setIncome] = useState(0);
     const [expense, setExpense] = useState(0);
+    const [totalBalance, setTotalBalance] = useState(0)
+    
+    const dispatch = useDispatch();
+
 
     useEffect(() => {
         setFilteredList(filterListByMonth(list, currentMonth))
@@ -28,7 +33,6 @@ export default function ExpenseTracker(){
     useEffect(() => {
         let incomeCount = 0;
         let expenseCount = 0;
-        
         for (let i in filteredList) {
             if (categories[filteredList[i].category].expense){
                 expenseCount += filteredList[i].value
@@ -36,7 +40,6 @@ export default function ExpenseTracker(){
                 incomeCount += filteredList[i].value
             }
         }
-
         setIncome(incomeCount);
         setExpense(expenseCount)
     },[filteredList])
@@ -44,6 +47,24 @@ export default function ExpenseTracker(){
     const handleMonthChange = (newMonth: string) => {
         setCurrentMonth(newMonth)
     }
+
+    useEffect(() => { // Sets the state of the Total Balance so we can export it to the Redux Store
+        
+        
+        // dispatch(getTotalBalance(list))
+        
+        let expenseCount = 0
+        let incomeCount = 0
+        for(let i in list){
+            if (categories[list[i].category].expense){                
+                expenseCount += list[i].value
+            } else{
+                incomeCount += list[i].value
+            }
+            // setTotalBalance(incomeCount - expenseCount)
+            setTotalBalance({incomeCountArgument: incomeCount, expenseCountArgument: expenseCount})
+        }
+    }, [list])
 
     const handleAddExpense = (expense: Expense) => {
         let newList = [...list];

@@ -6,6 +6,12 @@ export default function WorldSupportPage(){
             <h2>So, if you are in your way to financial independence and you have helped yourself being self sustainable, why not help the world do the same? </h2>
             <h2>These are some projects that we think you might find interesting.</h2>
             <CharityProject/>
+ 
+            {/* Biodegradable plastic projects */}
+            {/* Bioluminescent plants projects */}
+            {/* Energetic efficiency projects */}
+            {/* Other forms of fuel (Water / hydrogen moved vehicles) */}
+
         </>
     )
 }

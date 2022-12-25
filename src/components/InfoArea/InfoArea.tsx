@@ -3,6 +3,7 @@ import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
 import { BsFillArrowRightCircleFill} from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib'
 import ResumeExpenses from '../ResumeExpenses/ResumeExpenses'
+
 type Props = {
     currentMonth: string,
     onMonthChange: (newMonth: string) => void;

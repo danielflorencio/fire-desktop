@@ -16,7 +16,8 @@ export default function Sidebar(){
             <ul className="nav nav-pills flex-column mb-auto">
             <CustomLink to='/' name='Home' child={<AiFillHome/>}/>
             <CustomLink to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
-            <CustomLink to='/CompoundInterestCalculator' name='Calculators' child={<AiFillCalculator/>}/>
+            <CustomLink to='/calculators' name='Calculators' child={<AiFillCalculator/>}/>
+            <CustomLink to='/incomes' name='Incomes' child={<AiFillCalculator/>}/>
             {/* <CustomLink to='' name='Productivity Booster' child={}/> */}
             {/* <CustomLink to='' name='Feedback' child={}/> */}
             {/* <CustomLink to='' name='Stock Market' child={}/> */}

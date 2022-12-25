@@ -1,9 +1,17 @@
-.options-container{
+.option-container{
     border-radius: 8px;
     border: 1px solid grey;
-    width: 100%;
-    min-height: 70vh;
+    max-width: 35%;
+    padding: 1rem;
     margin-top: 5vh;
-    display: flex;
-    justify-content: space-around;
+    height: fit-content;
+}
+.option-container h3{
+    font-size: 20px;
+    margin-bottom: 2vh;
+}
+.option-container p{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
 }
