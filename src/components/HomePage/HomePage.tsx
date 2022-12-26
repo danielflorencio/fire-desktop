@@ -3,15 +3,13 @@ import MainTitle from '../Titles/MainTitle'
 import SubTitle from '../Titles/SubTitle'
 import { useState } from 'react'
 import { getCurrentMonth } from '../../helpers/dateFilter'
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store'
 import {AiFillFire} from 'react-icons/ai'
 import { IconContext } from "react-icons";
-// type Props = {
-//     pageTitle: string;
-//     subtitle: string;
-// }
 export default function HomePage(){
     
-
+    // const totalBalance = useSelector<RootState, number>(state => state.BalanceState);
 
     return( 
         <>

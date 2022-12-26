@@ -1,51 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../../store'
 import { Expense } from '../../types/expense'
-import { Category } from '../../types/category'
+import { expenses } from '../../data/expenses'
 
- 
 
-interface BalanceStateValue {
-  totalBalance: number
+export interface ExpensesSliceState{
+  expenses: Expense[];
 }
-
-interface BalanceState {
-  value: BalanceStateValue
-}
-
-const initialState = {
-  value: {
-    totalBalance: 0
-  } 
-} as BalanceState;
+const initialState: Expense[] = expenses
 
 
-export const balanceSlice = createSlice({
-  name: 'Balance',
-  // `createSlice` will infer the state type from the `initialState` argument
+export const expensesSlice = createSlice({
+  name: 'Expenses',
   initialState,
   reducers: {
-    setTotalBalance: (state: BalanceState, action: PayloadAction<BalanceStateValue>) => {
-      state.value = action.payload;
-    },
-    // decrement: (state) => {
-    //   state.value -= 1
-    // },
-    // // Use the PayloadAction type to declare the contents of `action.payload`
-    // incrementByAmount: (state, action: PayloadAction<number>) => {
-    //   state.value += action.payload
-    // },
+    addExpense: (state, action: PayloadAction<Expense>) => {
+      const expense = action.payload
+      state.push(expense)
+      console.log('expense added. Redux Working.')
+    }
+
   },
 })
 
-export const {setTotalBalance} = balanceSlice.actions
+export const {addExpense} = expensesSlice.actions;
 
-// Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.counter.value
+export default expensesSlice.reducer;
 
-export default balanceSlice.reducer
-
-
-// Logic
-// I need

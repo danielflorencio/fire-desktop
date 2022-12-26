@@ -7,8 +7,7 @@ import { ExpensesTable } from '../TableArea/ExpenseTrackerTable'
 import AddExpense from '../AddExpenseForm/AddExpenseForm'
 import InfoArea from '../InfoArea/InfoArea'
 import { useSelector, useDispatch } from 'react-redux';
-import { setTotalBalance } from '../../features/balance/balanceSlice'
-// import { createSlice, increment } from './redux/slice';
+import { addExpense } from '../../features/balance/balanceSlice'
 export default function ExpenseTracker(){
     const [list, setList] = useState<Expense[]>(expenses); 
 
@@ -20,10 +19,9 @@ export default function ExpenseTracker(){
     const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
     const [income, setIncome] = useState(0);
     const [expense, setExpense] = useState(0);
-    const [totalBalance, setTotalBalance] = useState(0)
-    
+ 
     const dispatch = useDispatch();
-
+    // const totalBalance = useSelector((state: any) => state.setTotalBalance.value)
 
     useEffect(() => {
         setFilteredList(filterListByMonth(list, currentMonth))
@@ -49,10 +47,6 @@ export default function ExpenseTracker(){
     }
 
     useEffect(() => { // Sets the state of the Total Balance so we can export it to the Redux Store
-        
-        
-        // dispatch(getTotalBalance(list))
-        
         let expenseCount = 0
         let incomeCount = 0
         for(let i in list){
@@ -61,8 +55,13 @@ export default function ExpenseTracker(){
             } else{
                 incomeCount += list[i].value
             }
+            // let totalBalance = incomeCount - expenseCount
+            // const totalBalanceState: BalanceStateValue = {
+            //     totalBalance: incomeCount - expenseCount
+            // } 
             // setTotalBalance(incomeCount - expenseCount)
-            setTotalBalance({incomeCountArgument: incomeCount, expenseCountArgument: expenseCount})
+            // dispatch(addExpense())
+            // setTotalBalance({incomeCountArgument: incomeCount, expenseCountArgument: expenseCount})
         }
     }, [list])
 
@@ -71,6 +70,13 @@ export default function ExpenseTracker(){
         newList.push(expense);
         setList(newList);
     }
+
+
+    // Testing Redux
+    const now = new Date(2022, 11, 25, 12, 0, 0, 0);
+    dispatch(addExpense({date: now,category: 'Food', title: 'Popcorn', value: 23}))
+    // Testing Redux
+
 
     return(
     <>
