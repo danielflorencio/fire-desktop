@@ -32,3 +32,9 @@ label {
 input{ 
     display: block;
 }
+.fire-color-gradient{
+    color: linear-gradient(#FC575E, #F7B42C);
+}
+.fire-background-gradient{
+    background-color: linear-gradient(#FC575E, #F7B42C);
+}
