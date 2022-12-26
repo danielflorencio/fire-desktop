@@ -3,7 +3,7 @@ import balanceSlice from './features/balance/balanceSlice'
 
 export const store = configureStore({
   reducer: {
-    currentBalance: balanceSlice
+    setTotalBalance: balanceSlice
   },
 })
 
