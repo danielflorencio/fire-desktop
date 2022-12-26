@@ -73,7 +73,8 @@ export default function ExpenseTracker(){
 
 
     // Testing Redux
-    const now = new Date(2022, 11, 25, 12, 0, 0, 0);
+    const now = new Date();
+    // const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDay());
     dispatch(addExpense({date: now,category: 'Food', title: 'Popcorn', value: 23}))
     // Testing Redux
 
