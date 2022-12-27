@@ -1,23 +1,11 @@
 import './styles.css'
-import MainTitle from '../Titles/MainTitle'
-import SubTitle from '../Titles/SubTitle'
-import { useState } from 'react'
-import { getCurrentMonth } from '../../helpers/dateFilter'
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store'
 import {AiFillFire} from 'react-icons/ai'
 import { IconContext } from "react-icons";
 import BalanceInfo from './BalanceInfo'
 export default function HomePage(){
     
-    // const totalBalance = useSelector<RootState, number>(state => state.BalanceState);
-
     return( 
         <>
-            {/* <MainTitle title='Welcome to the Fire Advisor.'/> */}
-            {/* <SubTitle title='This is where your financial freedom begins.'/> */}
-
-            {/* Show income, expenses and balance components.*/}
             {/* Show a component saying like...
             Following this route you're following right now, you're probably going to achieve financial independence in X years. 
             (Here goes a phrase if the result is going good or not. 

@@ -6,7 +6,7 @@ import { getCurrentMonth, filterListByMonth } from '../../helpers/dateFilter'
 import { ExpensesTable } from '../TableArea/ExpenseTrackerTable'
 import AddExpense from '../AddExpenseForm/AddExpenseForm'
 import InfoArea from '../InfoArea/InfoArea'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addExpense } from '../../features/balance/balanceSlice'
 export default function ExpenseTracker(){
     const [list, setList] = useState<Expense[]>(expenses); 
@@ -21,8 +21,6 @@ export default function ExpenseTracker(){
     const [expense, setExpense] = useState(0);
  
     const dispatch = useDispatch();
-    // const totalBalance = useSelector((state: any) => state.setTotalBalance.value)
-
     useEffect(() => {
         setFilteredList(filterListByMonth(list, currentMonth))
     }, [list, currentMonth] ) // This last argument in the useEffect determines what we are going to monitor changes.
@@ -45,25 +43,6 @@ export default function ExpenseTracker(){
     const handleMonthChange = (newMonth: string) => {
         setCurrentMonth(newMonth)
     }
-
-    useEffect(() => { // Sets the state of the Total Balance so we can export it to the Redux Store
-        let expenseCount = 0
-        let incomeCount = 0
-        for(let i in list){
-            if (categories[list[i].category].expense){                
-                expenseCount += list[i].value
-            } else{
-                incomeCount += list[i].value
-            }
-            // let totalBalance = incomeCount - expenseCount
-            // const totalBalanceState: BalanceStateValue = {
-            //     totalBalance: incomeCount - expenseCount
-            // } 
-            // setTotalBalance(incomeCount - expenseCount)
-            // dispatch(addExpense())
-            // setTotalBalance({incomeCountArgument: incomeCount, expenseCountArgument: expenseCount})
-        }
-    }, [list])
 
     const handleAddExpense = (expense: Expense) => {
         let newList = [...list];

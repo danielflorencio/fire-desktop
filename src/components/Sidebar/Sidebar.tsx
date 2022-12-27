@@ -1,9 +1,8 @@
 import './styles.css'
-import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-import { ReactElement } from 'react';
 import { AiFillHome } from 'react-icons/ai'
 import { FaMoneyBillWave } from 'react-icons/fa'
 import {AiFillCalculator, AiFillFire} from 'react-icons/ai'
+import CustomLink  from '../CustomLink/CustomLink'
 
 export default function Sidebar(){
     return(
@@ -17,7 +16,7 @@ export default function Sidebar(){
             <CustomLink to='/' name='Home' child={<AiFillHome/>}/>
             <CustomLink to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
             <CustomLink to='/calculators' name='Calculators' child={<AiFillCalculator/>}/>
-            <CustomLink to='/incomes' name='Incomes' child={<AiFillCalculator/>}/>
+            {/* <CustomLink to='/incomes' name='Incomes' child={<AiFillCalculator/>}/> */}
             {/* <CustomLink to='' name='Productivity Booster' child={}/> */}
             {/* <CustomLink to='' name='Feedback' child={}/> */}
             {/* <CustomLink to='' name='Stock Market' child={}/> */}
@@ -42,23 +41,3 @@ export default function Sidebar(){
         </div>
     )
 }
-
-type Props = {
-    to: string,
-    child: ReactElement,
-    name: string,
-    anotherProp?: string; // ? Makes so the prop is not required
-}
-
-function CustomLink({to, name, child}: Props ){ // https://www.youtube.com/watch?v=SLfhMt5OUPI&t=1031s
-    const resolvedPath = useResolvedPath(to);
-    const isActive = useMatch({path: resolvedPath.pathname})
-    return(
-        <li>
-            <Link to={to} className={isActive ? 'nav-link active' : 'nav-link text-white'}>
-            <svg className="bi pe-none me-2" width="16" height="16">{child}</svg>
-            {name}
-            </Link>
-        </li>
-    )
-}   

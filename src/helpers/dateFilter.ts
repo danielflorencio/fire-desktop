@@ -10,24 +10,13 @@ export const filterListByMonth = (list: Expense[], date: string): Expense[] => {
     let [year, month] = date.split('-');
     
     for (let i in list){
-        // console.log('--------------------------------------')
-        // console.log('list item number ', i, ' year === ', list[i].date.getFullYear())
-        // console.log('list item number ', i, ' month === ', list[i].date.getMonth())
-        // console.log('full date ', list[i].date.getDate())
-        // console.log('year variable value === ', year)
-        // console.log('month variable value === ' , (parseInt(month) - 1))
         if(
             (list[i].date.getFullYear()) === parseInt(year) &&
             list[i].date.getMonth()  === (parseInt(month) - 1)
         ) {
-            // console.log('conditional in for loop being true.')
             newList.push(list[i])
-            // console.log('newList ', i, ' ', newList)
         }
     }
-    // console.log('date ', Date())
-    // console.log('newlist ', newList)
-    // console.log(newList)
     return newList;
 }
 

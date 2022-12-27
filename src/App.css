@@ -14,12 +14,9 @@ main {
 } 
 .box-content-container{
     padding: 1rem 2rem;
-    width: 80%;
-    /* min-width: 16rem; */
-    /* max-width: 20rem; */
-    /* min-height: 16rem; */
+    width: 25rem;
     min-height: 70vh;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -37,4 +34,8 @@ input{
 }
 .fire-background-gradient{
     background-color: linear-gradient(#FC575E, #F7B42C);
+}
+.wrapper{
+    height: 100%;
+    width: 100%;
 }

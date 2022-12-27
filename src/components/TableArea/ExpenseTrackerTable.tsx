@@ -1,13 +1,11 @@
 import './styles.css'
 import { Expense } from '../../types/expense'
-import { filterListByMonth, formatDate } from '../../helpers/dateFilter'
+import { formatDate } from '../../helpers/dateFilter'
 import { categories } from '../../data/categories'
-import { useEffect } from 'react'
 
-type Props = { // Everytime we pass props in React Typescript components, we have to declare the type of the props separately.
+type Props = {
     list: Expense[] 
 }
-
 
 export const ExpensesTable = ({list}: Props) => {
     return(
@@ -30,7 +28,6 @@ export const ExpensesTable = ({list}: Props) => {
     
                     ))
                 }
-
             </div>
         </>
     )

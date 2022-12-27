@@ -2,47 +2,15 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { Expense } from '../../types/expense'
 import { expenses } from '../../data/expenses'
-import { Category } from '../../types/category'
 import { categories } from '../../data/categories'
 export interface ExpensesSliceState{
   expenses: Expense[];
   totalBalance: number;
 }
-// const initialState: Expense[] = expenses
-
 const initialState: ExpensesSliceState = {
-  expenses: expenses,
+  expenses: expenses, // The first expenses is the value of the state, and the second expenses is an array of 'expense' objects called from an external file. In a real world application, we would need to call this data from the database.
   totalBalance: 0
 } 
-
-
-
-
-
-// export interface TotalBalanceSliceState{
-//   totalBalance: number
-// }
-
-// The code below calculates the total balance.
-// let totalBalance: number = 0
-// let expenseCount = 0
-// let incomeCount = 0
-// for(let i = 0; i < expenses.length; i++){
-//   if (categories[expenses[i].category].expense){                
-//     expenseCount += expenses[i].value
-// } else{
-//     incomeCount += expenses[i].value
-// }
-// }
-// totalBalance = incomeCount - expenseCount
-// console.log('Total balance: ', totalBalance)
-// The code above calculates the total balance.
-
-// export const totalBalanceSliceState = createSlice({
-//   name:'Total Balance',
-//   totalBalance,
-//   reducers: {}
-// })
 
 export const expensesSlice = createSlice({
   name: 'Expenses',
@@ -50,7 +18,6 @@ export const expensesSlice = createSlice({
   reducers: {
     addExpense: (state, action: PayloadAction<Expense>) => {
       const expense = action.payload
-      // state.push(expense)
       state.expenses.push(expense)
       let incomeCount = 0
       let expenseCount = 0
@@ -62,11 +29,11 @@ export const expensesSlice = createSlice({
         }
       }
       state.totalBalance = incomeCount - expenseCount     
-      console.log('expense added. Redux Working.')
-      console.log('total balance: ', state.totalBalance)
+      // expenses.push(expense) // updates the value of the object expenses called from 'data/expenses'
     }
   },
 })
+
 
 export const {addExpense} = expensesSlice.actions;
 
