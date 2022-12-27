@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store'
 import {AiFillFire} from 'react-icons/ai'
 import { IconContext } from "react-icons";
+import BalanceInfo from './BalanceInfo'
 export default function HomePage(){
     
     // const totalBalance = useSelector<RootState, number>(state => state.BalanceState);
@@ -37,8 +38,7 @@ export default function HomePage(){
             </div>
             <div className='user-data-information-container'>
                 <div className="option-container">
-                    <h3>Current Balance</h3>
-                    <p>U$ 00,00</p>
+                    <BalanceInfo title='Current Balance' status=''/>
                 </div>
                 <div className="option-container">
                     <h3>Next Month Previewed Balance</h3>
