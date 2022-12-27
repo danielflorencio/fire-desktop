@@ -2,7 +2,7 @@ import './styles.css'
 import { AiFillHome } from 'react-icons/ai'
 import { FaMoneyBillWave } from 'react-icons/fa'
 import {AiFillCalculator, AiFillFire} from 'react-icons/ai'
-import CustomLink  from '../CustomLink/CustomLink'
+import CustomLink  from '../RouterComponents/CustomLink'
 
 export default function Sidebar(){
     return(
