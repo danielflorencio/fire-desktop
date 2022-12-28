@@ -27,7 +27,7 @@ export default function SiGraph({amount, investment, howLongM, interestRate, how
 
     let arrayOfMonths: number[] = [0]
     for(let i = 0; i < howLongM; i++){
-      arrayOfMonths = [...arrayOfMonths, i]
+      arrayOfMonths = [...arrayOfMonths, i + 1]
     }
 
     const chartData = {
