@@ -12,12 +12,9 @@ export default function CiGraph({amount, investment, howLongM, interestRate}: Si
         let valueToConcat: number = newAmountArray[i] + newAmountArray[i]*interestRate/100 + investment;        
         newAmountArray = [...newAmountArray, valueToConcat]
     }
-
-    // let responseArray: string[] = []
     
     for(let i = 0; i < howLongM; i++){
       newAmountArray[i] = parseFloat(newAmountArray[i].toFixed(2));
-      // responseArray = [...responseArray, newAmountArray[i].toString() + ' - ']
     }
     
     let arrayOfMonths: number[] = [0]

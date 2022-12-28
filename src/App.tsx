@@ -6,6 +6,7 @@ import HomePage from './components/HomePage/HomePage';
 import { Route, Routes} from 'react-router-dom'
 import CalculatorsPage from './components/CalculatorsPage/CalculatorsPage';
 import CiCalculator from './components/CiCalc/CiCalc';
+import SiCalculator from './components/SiCalc/SiCalc';
 export default function App() {  
   return (
     <>
@@ -17,7 +18,7 @@ export default function App() {
             <Route path='expenses' element={<ExpenseTracker/>}/>
             <Route path='calculators' element={<CalculatorsPage/>}/>
             <Route path='calculators/compound_interest_calculator' element={<CiCalculator/>}/>
-            <Route path='calculators/simple_interest_calculator' element={<CiCalculator/>}/>
+            <Route path='calculators/simple_interest_calculator' element={<SiCalculator/>}/>
           </Routes>
         </div>
       </main>

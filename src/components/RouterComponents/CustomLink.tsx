@@ -4,8 +4,7 @@ import { ReactElement } from 'react';
 type Props = {
     to: string,
     child: ReactElement,
-    name: string,
-    anotherProp?: string; // ? Makes so the prop is not required
+    name: string
 }
 
 export default function CustomLink({to, name, child}: Props ){ // https://www.youtube.com/watch?v=SLfhMt5OUPI&t=1031s
