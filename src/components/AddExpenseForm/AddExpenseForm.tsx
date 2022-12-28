@@ -1,7 +1,5 @@
 import {useState} from 'react'
-
 import { Expense } from '../../types/expense';
-
 import { categories } from '../../data/categories';
 import { newDateAdjusted } from '../../helpers/dateFilter';
 
@@ -19,18 +17,20 @@ export default function AddExpense({ onAdd }: Props){
   
     const handleAddEvent = () => {
       let errors: string[] = [];
-  
+      console.log('category.keys value: ', categoryKeys)
+      
+      console.log('category field value: ', categoryField)
       if(isNaN(new Date(dateField).getTime())) {
-        errors.push('Data inválida!');
+        errors.push('Invalid date!');
       }
       if(!categoryKeys.includes(categoryField)) {
-        errors.push('Categoria inválida!');
+        errors.push('Invalid category!');
       }
       if(titleField === '') {
-        errors.push('Título vazio!');
+        errors.push('Invalid Title!');
       }
       if(valueField <= 0) {
-        errors.push('Valor inválido!');
+        errors.push('Invalid value!');
       }
   
       if(errors.length > 0) {
@@ -63,13 +63,12 @@ export default function AddExpense({ onAdd }: Props){
             <div>
                 <div><strong>Category</strong></div>
                 <label>
-                    <select>
+                    <select value={categoryField} onChange={e => setCategoryField(e.target.value)}>
                         <option></option>
-                        <>
-                            {categoryKeys.map((key, index) => (
-                            <option key={index} value={key}>{categories[key].title}</option>
-                            ))}
-                        </>
+                        {categoryKeys.map((key, index) => (
+                          <option key={key} value={key}>{categories[key].title}</option>
+                          ))
+                        }
                     </select>
                 </label>
             </div>
