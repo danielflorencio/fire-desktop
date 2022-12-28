@@ -8,6 +8,7 @@ import AddExpense from '../AddExpenseForm/AddExpenseForm'
 import InfoArea from '../InfoArea/InfoArea'
 import { useDispatch } from 'react-redux';
 import { addExpense } from '../../features/balance/balanceSlice'
+import { RootState } from '../../store'
 export default function ExpenseTracker(){
     const [list, setList] = useState<Expense[]>(expenses); 
 
@@ -44,17 +45,20 @@ export default function ExpenseTracker(){
         setCurrentMonth(newMonth)
     }
 
-    const handleAddExpense = (expense: Expense) => {
-        let newList = [...list];
-        newList.push(expense);
-        setList(newList);
+    const handleAddExpense = (expense: Expense) => {        
+        setList([...list, expense]);
     }
 
 
     // Testing Redux
-    const now = new Date();
-    // const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDay());
-    dispatch(addExpense({date: now,category: 'Food', title: 'Popcorn', value: 23}))
+    // const now = new Date();
+    // // const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDay());
+    // function testDispatch(){
+    //     dispatch(addExpense({date: now,category: 'Food', title: 'Popcorn', value: 23}))
+    //     const lastExpense = useSelector<RootState, string>(state => state.addExpense.expenses[expenses.length].title);
+    //     console.log('Last expense state title: ', lastExpense)
+    // }
+    // testDispatch()
     // Testing Redux
 
 

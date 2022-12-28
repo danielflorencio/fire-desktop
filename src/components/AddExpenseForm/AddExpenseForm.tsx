@@ -17,9 +17,6 @@ export default function AddExpense({ onAdd }: Props){
   
     const handleAddEvent = () => {
       let errors: string[] = [];
-      console.log('category.keys value: ', categoryKeys)
-      
-      console.log('category field value: ', categoryField)
       if(isNaN(new Date(dateField).getTime())) {
         errors.push('Invalid date!');
       }
@@ -32,7 +29,6 @@ export default function AddExpense({ onAdd }: Props){
       if(valueField <= 0) {
         errors.push('Invalid value!');
       }
-  
       if(errors.length > 0) {
         alert(errors.join("\n"));
       } else {
