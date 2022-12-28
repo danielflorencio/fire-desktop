@@ -8,46 +8,23 @@ export default function SiGraph({amount, investment, howLongM, interestRate, how
 
     let newAmountArray: number[] = [amount]
 
-    // TimeFrame Dictates at which spans of time the interest rate will be applied.
-    // HowLongM Dictates for how long this investment will be applied. 
-
-
-    let numberHowLongTimeFrame: number
-
-    if(howLongTimeFrame === 'annual'){
-      numberHowLongTimeFrame = 12
-    } else{
-      numberHowLongTimeFrame = 1
-    }
-
-    let numberInterestRateTimeFrame: number
-
-    if(interestTimeFrame === 'annual'){
-      numberInterestRateTimeFrame = 12
-    } else{
-      numberInterestRateTimeFrame = 1
-    }
-
-
-    // for (let i = 0; i < howLongM; i++){
-    //   let valueToConcat: number = 
-    // }
-
-
-
-    for (let i = 0; i < howLongM; i++){
-      let valueToConcat: number = newAmountArray[i] + newAmountArray[i]*interestRate/100 + investment;
+    if(howLongTimeFrame === 'annual' && interestTimeFrame === 'monthly'){
+      howLongM = howLongM*12
+    } else if (howLongTimeFrame === 'monthly' && interestTimeFrame === 'annual') {
+      if(howLongM < 12){
+        return(
+          <div>
+            In order for you to make money through a simple interest investment, the period through which your money is going to be invested must be bigger than the minimum amount of time for the investment to yield some dividends. 
+          </div>
+        )
+      } 
     }
 
     for(let i = 0; i < howLongM; i++){
-      let valueToConcat: number = newAmountArray[i] + newAmountArray[i]*interestRate/100 + investment;        
+      let valueToConcat: number = newAmountArray[i] + newAmountArray[0]*interestRate/100
       newAmountArray = [...newAmountArray, valueToConcat]
     }
-    
-    for(let i = 0; i < howLongM; i++){
-      newAmountArray[i] = parseFloat(newAmountArray[i].toFixed(2));
-    }
-    
+
     let arrayOfMonths: number[] = [0]
     for(let i = 0; i < howLongM; i++){
       arrayOfMonths = [...arrayOfMonths, i]
