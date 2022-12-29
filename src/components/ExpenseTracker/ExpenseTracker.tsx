@@ -49,19 +49,6 @@ export default function ExpenseTracker(){
         dispatch(addExpense({date: expense.date, category: expense.category, title: expense.title, value: expense.value }))
     }
 
-
-    // Testing Redux
-    // const now = new Date();
-    // // const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDay());
-    // function testDispatch(){
-    //     dispatch(addExpense({date: now,category: 'Food', title: 'Popcorn', value: 23}))
-    //     const lastExpense = useSelector<RootState, string>(state => state.addExpense.expenses[expenses.length].title);
-    //     console.log('Last expense state title: ', lastExpense)
-    // }
-    // testDispatch()
-    // Testing Redux
-
-
     return(
     <>
         <h1 className='text-center' style={{marginBottom: '45px'}}>Expense Tracker</h1>  

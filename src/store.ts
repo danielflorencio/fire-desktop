@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { expensesSlice } from './features/balance/balanceSlice'
-import addExpense from './features/balance/balanceSlice'
+import addExpense, { expensesSlice, selectTotalBalance } from './features/balance/balanceSlice'
 
 export const store = configureStore({
   reducer: {
     expenses: addExpense,
+    
   },
 })
 
