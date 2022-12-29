@@ -19,11 +19,8 @@ export default function Sidebar(){
 
             {/* <CustomLink to='' name='Stock Market' child={}/> */}
             {/* <CustomLink to='' name='Productivity Booster' child={}/> */}
-
             {/* <CustomLink to='/incomes' name='Incomes' child={<AiFillCalculator/>}/> */}
-            
             {/* <CustomLink to='' name='Feedback' child={}/> */}
-
             {/* <CustomLink to='' name='Crypto Market' child={}/> */}
             {/* <CustomLink to='' name='Support us' child={}/> */}
             {/* <CustomLink to='' name='Charity' child={}/> */}

@@ -12,7 +12,6 @@ import { ReactElement, useState } from "react";
 export function useMultiStepForm(steps: ReactElement[]){
     const [currentStepIndex, setCurrentStepIndex] = useState(0)
 
-
     function next(){
         setCurrentStepIndex(i => {
             if (i >= steps.length - 1) return i
@@ -29,7 +28,7 @@ export function useMultiStepForm(steps: ReactElement[]){
         setCurrentStepIndex(index)
     }
 
-    return { // Notice that ts file returns aways need {} and not () different from tsx or jsx.
+    return { // Notice that ts file returns always need {} and not () different from tsx or jsx.
         currentStepIndex,
         step: steps[currentStepIndex],
         steps,

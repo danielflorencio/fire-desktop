@@ -3,7 +3,6 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../store'
 import { Expense } from '../../types/expense'
 import { expenses } from '../../data/expenses'
-import { categories } from '../../data/categories'
 import { getTotalBalance } from './getBalanceInfo'
 export interface ExpensesSliceState{
   expenses: Expense[];

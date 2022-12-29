@@ -23,12 +23,10 @@ const INITIAL_DATA: FormData = {
 export default function SiCalculator(){
 
     const [data, setData] = useState(INITIAL_DATA);
-    // const [timeFrame, setTimeFrame] = useState(0)
-
 
     function updateFields(fields: Partial<FormData>){ // The Partial type allows you to use only a partial version of another certain type.
         setData(prev => {
-            return { ...prev, ...fields} // This function takes the previous data from the last field render and overrides that data with the new data.
+            return {...prev, ...fields} // This function takes the previous data from the last field render and overrides that data with the new data.
         })
     }
 
@@ -61,17 +59,8 @@ export default function SiCalculator(){
     )
 }
 
-export type SimulationData = {
-    amount: number,
-    investment: number,
-    howLongM: number,
-    interestRate: number,
-    interestTimeFrame: string,
-    howLongTimeFrame: string
-}
-
-type SimulationFormProps = SimulationData & {
-    updateFields: (fields: Partial<SimulationData>) => void 
+type SimulationFormProps = FormData & {
+    updateFields: (fields: Partial<FormData>) => void 
 }
 
 export function SiForm({amount, howLongM, interestRate, interestTimeFrame, howLongTimeFrame, updateFields} : SimulationFormProps){   
@@ -105,7 +94,7 @@ export function SiForm({amount, howLongM, interestRate, interestTimeFrame, howLo
                 value={howLongM}
                 onChange={e => updateFields({ howLongM: e.target.valueAsNumber })} 
                 required></input>
-
+                
                 <select value={howLongTimeFrame} onChange={e => updateFields({ howLongTimeFrame: e.target.value})}>
                     <option value="annual">Annual</option>
                     <option value="monthly">Monthly</option>

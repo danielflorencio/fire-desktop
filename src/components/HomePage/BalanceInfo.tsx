@@ -4,11 +4,7 @@ type Props = {
     status: string
 }
 export default function BalanceInfo({title, status}: Props){
-    
-    // const value = useSelector<RootState, number>(state => state.addExpense.totalBalance); // Old line before the store configuration change
-    // const value = useSelector<RootState, number>(state => state.expenses.totalBalance); // New line but better   
-    const value = useAppSelector(state => state.expenses.totalBalance); // Even newer line and even better
-
+    const value = useAppSelector(state => state.expenses.totalBalance); 
     return(
         <>
             <h3>{title}</h3>

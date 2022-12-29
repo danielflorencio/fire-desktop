@@ -55,15 +55,9 @@ export default function CiCalculator(){
     )
 }
 
-export type SimulationData = {
-    amount: number,
-    investment: number,
-    howLongM: number,
-    interestRate: number
-}
 
-type SimulationFormProps = SimulationData & {
-    updateFields: (fields: Partial<SimulationData>) => void 
+type SimulationFormProps = FormData & {
+    updateFields: (fields: Partial<FormData>) => void 
 }
 
 export function CiForm({amount, howLongM, investment, interestRate, updateFields} : SimulationFormProps){
