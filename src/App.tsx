@@ -6,10 +6,15 @@ import { Route, Routes} from 'react-router-dom'
 import CalculatorsPage from './components/CalculatorsPage/CalculatorsPage';
 import CiCalculator from './components/CiCalc/CiCalc';
 import SiCalculator from './components/SiCalc/SiCalc';
+import { useMediaQuery } from 'react-responsive';
+import Navbar from './components/Navbar/Navbar';
 export default function App() {  
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 767px)' });
+
+
   return (
-    <>
-      <Sidebar/>
+    <div className='app-container'>
+      {isSmallScreen ? <Navbar/> : <Sidebar/>}
       <main className='overflow-auto'>
         <div className='main-content-container'>
           <Routes>
@@ -21,6 +26,6 @@ export default function App() {
           </Routes>
         </div>
       </main>
-    </>
+    </div>
   )
 }
