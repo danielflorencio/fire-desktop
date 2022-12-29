@@ -4,7 +4,7 @@ import addExpense from './features/balance/balanceSlice'
 
 export const store = configureStore({
   reducer: {
-    addExpense
+    expenses: addExpense,
   },
 })
 

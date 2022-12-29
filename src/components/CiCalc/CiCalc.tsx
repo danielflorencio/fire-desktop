@@ -37,17 +37,17 @@ export default function CiCalculator(){
     }
 
     return(
-        <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
-            <h4>Ci Cal Step {currentStepIndex + 1} / {steps.length}</h4>
+        <div className='shadow-lg p-3 mb-5 bg-white rounded'>
+            <h4>Ci Calc Step {currentStepIndex + 1} / {steps.length}</h4>
             {currentStepIndex === 0 ? (
             <form onSubmit={handleSubmit}>
                 {step}
-                <button className='btn btn-primary' type='submit'>Do it</button>
+                <button className='btn btn-primary ' type='submit'>Do it</button>
             </form>
             ) : (
                 <>
                 {step}
-                <button className='btn btn-primary' onClick={back}>return</button>
+                <button className='btn btn-primary ' onClick={back}>return</button>
                 </>
                 )
             }                        
@@ -70,13 +70,19 @@ export function CiForm({amount, howLongM, investment, interestRate, updateFields
     
     return(
         <>
-            <label>Initial value: <input 
-            type='number' 
-            value={amount}
-            onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
-            autoFocus 
-            required></input></label>
-
+            <div className="row">
+                <div className="col-xs-7">
+                    <label><h4>Initial value:</h4></label>
+                </div>
+                <div className="col-xs-5">
+                    <input className="form-control" 
+                    type='number' 
+                    value={amount}
+                    onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
+                    autoFocus 
+                    required></input>
+                </div>  
+            </div>
             <label>Time: <input 
             type='number' 
             value={howLongM}

@@ -13,8 +13,8 @@ main {
     align-items: center;
 } 
 .box-content-container{
-    padding: 1rem 2rem;
-    width: 25rem;
+    /* padding: 1rem 2rem; */
+    /* width: 25rem; */
     min-height: 70vh;
     /* border: 1px solid grey; */
     border-radius: 8px;

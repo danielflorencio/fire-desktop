@@ -2,8 +2,7 @@ import './styles.css'
 import {AiFillFire} from 'react-icons/ai'
 import { IconContext } from "react-icons";
 import BalanceInfo from './BalanceInfo'
-export default function HomePage(){
-    
+export default function HomePage(){    
     return( 
         <>
             {/* Show a component saying like...

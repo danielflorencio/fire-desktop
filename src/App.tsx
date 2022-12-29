@@ -1,6 +1,5 @@
 import './App.css'
 import Sidebar from './components/Sidebar/Sidebar';
-// import CiCalculator from './components/CiCalc/CiCalc';
 import ExpenseTracker from './components/ExpenseTracker/ExpenseTracker';
 import HomePage from './components/HomePage/HomePage';
 import { Route, Routes} from 'react-router-dom'

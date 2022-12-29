@@ -8,7 +8,6 @@ import AddExpense from '../AddExpenseForm/AddExpenseForm'
 import InfoArea from '../InfoArea/InfoArea'
 import { useDispatch } from 'react-redux';
 import { addExpense } from '../../features/balance/balanceSlice'
-import { RootState } from '../../store'
 export default function ExpenseTracker(){
     const [list, setList] = useState<Expense[]>(expenses); 
 
@@ -47,6 +46,7 @@ export default function ExpenseTracker(){
 
     const handleAddExpense = (expense: Expense) => {        
         setList([...list, expense]);
+        dispatch(addExpense({date: expense.date, category: expense.category, title: expense.title, value: expense.value }))
     }
 
 
