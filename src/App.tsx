@@ -9,7 +9,7 @@ import SiCalculator from './components/SiCalc/SiCalc';
 import { useMediaQuery } from 'react-responsive';
 import Navbar from './components/Navbar/Navbar';
 export default function App() {  
-  const isSmallScreen = useMediaQuery({ query: '(max-width: 767px)' });
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 968px)' });
 
   return (
     <div className='app-container'>

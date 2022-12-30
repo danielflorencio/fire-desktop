@@ -23,30 +23,7 @@ export default function Navbar(){
                     Home
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="nav-link text-white">
-                    <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#speedometer2"/></svg>
-                    Dashboard
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="nav-link text-white">
-                    <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#table"/></svg>
-                    Orders
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="nav-link text-white">
-                    <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#grid"/></svg>
-                    Products
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="nav-link text-white">
-                    <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#people-circle"/></svg>
-                    Customers
-                  </a>
-                </li> */}
+                */}
               </ul>
             </div>
           </div>
