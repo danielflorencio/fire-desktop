@@ -29,17 +29,31 @@ main {
     width: 100vw;
     height: 100vh;
 }
+.forms-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.form-item{
+
+}
+.form-item label{
+    display: block;
+    margin: 0;
+    font-weight: 550;
+}
+.form-item input{
+    margin-bottom: 3vh;
+}
 @media (max-width: 767px) {
     .app-container{
         flex-direction: column;
     }
 }
-label {
-    display: block;
-    margin: 1rem 0rem;
-}
 input{ 
-    display: block;
+    /* display: block;  CHANGED HERE. */ 
 }
 .fire-color-gradient{
     color: linear-gradient(#FC575E, #F7B42C);

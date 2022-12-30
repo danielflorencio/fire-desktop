@@ -37,17 +37,19 @@ export default function CiCalculator(){
     }
 
     return(
-        <div className='shadow-lg p-3 mb-5 bg-white rounded'>
-            <h4>Ci Calc Step {currentStepIndex + 1} / {steps.length}</h4>
+        <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
+            <p className="mb-4 text-center" style={{margin: '1vh 1vw'}}><strong>Compound Interest Calculator.</strong></p>
             {currentStepIndex === 0 ? (
+            <div className="forms-container">
             <form onSubmit={handleSubmit}>
                 {step}
-                <button className='btn btn-primary ' type='submit'>Do it</button>
+                <button className='btn btn-primary ' type='submit'>Calculate</button>
             </form>
+            </div>
             ) : (
                 <>
                 {step}
-                <button className='btn btn-primary ' onClick={back}>return</button>
+                <button className='btn btn-primary btn-block' onClick={back}>New Simulation</button>
                 </>
                 )
             }                        
@@ -64,36 +66,49 @@ export function CiForm({amount, howLongM, investment, interestRate, updateFields
     
     return(
         <>
-            <div className="row">
-                <div className="col-xs-7">
-                    <label><h4>Initial value:</h4></label>
+            {/* <div className="forms-container"> */}
+                <div className="form-item">
+                    {/* <div className="col-xs-7"> */}
+                        <label>Initial value: </label>
+                    {/* </div> */}
+                    {/* <div className="col-xs-5"> */}
+                        <input className="" 
+                        type='number' 
+                        value={amount}
+                        onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
+                        autoFocus 
+                        required></input>
+                    {/* </div>   */}
                 </div>
-                <div className="col-xs-5">
-                    <input className="form-control" 
-                    type='number' 
-                    value={amount}
-                    onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
-                    autoFocus 
-                    required></input>
-                </div>  
-            </div>
-            <label>Time: <input 
-            type='number' 
-            value={howLongM}
-            onChange={e => updateFields({ howLongM: e.target.valueAsNumber })} 
-            required></input></label>
 
-            <label>Monthly Investment: <input 
-            type='number' 
-            value={investment}
-            onChange={e => updateFields({ investment: e.target.valueAsNumber })} 
-            required></input></label>
+                <div className="form-item">
+                <label>Time: </label> 
+                <input 
+                type='number' 
+                value={howLongM}
+                onChange={e => updateFields({ howLongM: e.target.valueAsNumber })} 
+                required></input>
+                </div>
 
-            <label>Interest Rate: <input 
-            type='number' 
-            value={interestRate}
-            onChange={e => updateFields({ interestRate: e.target.valueAsNumber })} 
-            required></input></label>
+                <div className="form-item">
+                <label>Monthly Investment: </label> 
+                <input 
+                style={{display: 'block'}}
+                type='number' 
+                value={investment}
+                onChange={e => updateFields({ investment: e.target.valueAsNumber })} 
+                required></input>
+                </div>
+
+                <div className="form-item">
+                <label>Interest Rate: </label>
+                <input 
+                type='number' 
+                value={interestRate}
+                onChange={e => updateFields({ interestRate: e.target.valueAsNumber })} 
+                required></input>
+                </div>
+            {/* </div> */}
         </>
     )
 }
