@@ -43,20 +43,19 @@ export default function CiCalculator(){
             <div className="forms-container">
             <form onSubmit={handleSubmit}>
                 {step}
-                <button className='btn btn-primary ' type='submit'>Calculate</button>
+                <button className='btn btn-primary' type='submit'>Calculate</button>
             </form>
             </div>
             ) : (
                 <>
                 {step}
-                <button className='btn btn-primary btn-block' onClick={back}>New Simulation</button>
+                <button className='btn btn-primary' onClick={back}>New Simulation</button>
                 </>
                 )
             }                        
         </div>
     )
 }
-
 
 type SimulationFormProps = FormData & {
     updateFields: (fields: Partial<FormData>) => void 

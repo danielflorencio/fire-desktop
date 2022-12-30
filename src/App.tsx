@@ -11,11 +11,10 @@ import Navbar from './components/Navbar/Navbar';
 export default function App() {  
   const isSmallScreen = useMediaQuery({ query: '(max-width: 767px)' });
 
-
   return (
     <div className='app-container'>
       {isSmallScreen ? <Navbar/> : <Sidebar/>}
-      <main className='overflow-auto'>
+      <main className={isSmallScreen ? '' : 'overflow-auto'}>
         <div className='main-content-container'>
           <Routes>
             <Route path='/' element={<HomePage/>}/>

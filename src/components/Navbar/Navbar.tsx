@@ -1,3 +1,7 @@
+import CustomButton from '../RouterComponents/CustomButton'
+import { AiFillHome } from 'react-icons/ai'
+import { FaMoneyBillWave } from 'react-icons/fa'
+import {AiFillCalculator, AiFillFire} from 'react-icons/ai'
 import './styles.css'
 export default function Navbar(){
     return(
@@ -10,7 +14,10 @@ export default function Navbar(){
               </a>
     
               <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                <li>
+              <CustomButton to='/' name='Home' child={<AiFillHome/>}/>
+              <CustomButton to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
+              <CustomButton to='/calculators' name='Calculators' child={<AiFillCalculator/>}/>
+                {/* <li>
                   <a href="#" className="nav-link text-secondary">
                     <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#home"/></svg>
                     Home
@@ -39,7 +46,7 @@ export default function Navbar(){
                     <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#people-circle"/></svg>
                     Customers
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

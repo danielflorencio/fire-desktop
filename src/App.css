@@ -1,11 +1,10 @@
 header{
-    /* display: flex;
-    flex-direction: column;
-    width: 100vw; */
+
 }
 main {
-    min-height: 100vh;
-    max-height: 100vh;
+    /* min-height: 100vh; */
+    /* max-height: 100%; */
+    height: fit-content;
     width: 85vw;
 }
 .main-content-container{
@@ -13,12 +12,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* min-height: 100vh;
+    height: fit-content; */
+    height: 100%;
 } 
 .box-content-container{
-    /* padding: 1rem 2rem; */
-    /* width: 25rem; */
     min-height: 70vh;
-    /* border: 1px solid grey; */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -27,7 +26,9 @@ main {
 .app-container{
     display: flex;
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
+    min-height: 100vh;
+    max-height: 100%;
 }
 .forms-container{
     display: flex;
@@ -51,9 +52,6 @@ main {
     .app-container{
         flex-direction: column;
     }
-}
-input{ 
-    /* display: block;  CHANGED HERE. */ 
 }
 .fire-color-gradient{
     color: linear-gradient(#FC575E, #F7B42C);

@@ -1,5 +1,5 @@
 import './styles.css'
-import CustomButton from "../RouterComponents/CustomButton";
+import { Link } from 'react-router-dom';
 export default function CalculatorsPage(){
     return(
         <>
@@ -7,13 +7,12 @@ export default function CalculatorsPage(){
                 <div className="box-content-container shadow-lg p-3 mb-5 bg-white rounded">
                     <h3>Compound interest Calculator</h3>
                     <p>Simulate your financial results considering a consistent compound interest result.</p>
-                    <CustomButton to='/calculators/compound_interest_calculator' name='Compound Interest Calculator'/>
-                    {/* <button className="btn btn-primary" style={{maxWidth: '8rem'}}>Use calculator</button> */}
+                    <Link className='btn btn-primary' to='/calculators/compound_interest_calculator'>Compound Interest Calculator</Link>
                 </div>
                 <div className="box-content-container shadow-lg p-3 mb-5 bg-white rounded">
                     <h3>Simple interest Calculator</h3>
                     <p>Simulate your financial results considering a consistent simple interest result.</p>
-                    <CustomButton to='/calculators/simple_interest_calculator' name='Simple Interest Calculator'/>
+                    <Link className='btn btn-primary' to='/calculators/simple_interest_calculator'>Simple Interest Calculator</Link>
                 </div>
             </div>
         </>
