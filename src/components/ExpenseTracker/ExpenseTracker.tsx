@@ -7,7 +7,7 @@ import InfoArea from '../InfoArea/InfoArea'
 import { useDispatch } from 'react-redux';
 import { addExpense } from '../../features/balance/balanceSlice'
 import { useAppSelector } from '../../hooks'
-import { getMonthExpenses, getMonthIncomes } from '../../features/balance/getBalanceInfo'
+import { getMonthExpenses, getMonthIncomes } from '../../helpers/getBalanceInfo'
 export default function ExpenseTracker(){
     
     const [filteredList, setFilteredList] = useState<Expense[]>([]);

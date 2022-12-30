@@ -43,7 +43,7 @@ export default function CiCalculator(){
             <div className="forms-container">
             <form onSubmit={handleSubmit}>
                 {step}
-                <button className='btn btn-primary' type='submit'>Calculate</button>
+                <button className='btn btn-primary' type='submit'>Simulate</button>
             </form>
             </div>
             ) : (
@@ -65,49 +65,44 @@ export function CiForm({amount, howLongM, investment, interestRate, updateFields
     
     return(
         <>
-            {/* <div className="forms-container"> */}
-                <div className="form-item">
-                    {/* <div className="col-xs-7"> */}
-                        <label>Initial value: </label>
-                    {/* </div> */}
-                    {/* <div className="col-xs-5"> */}
-                        <input className="" 
-                        type='number' 
-                        value={amount}
-                        onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
-                        autoFocus 
-                        required></input>
-                    {/* </div>   */}
-                </div>
+            <div className="form-item">
+                <label>Initial value: </label>
 
-                <div className="form-item">
-                <label>Time: </label> 
-                <input 
+                <input className="" 
                 type='number' 
-                value={howLongM}
-                onChange={e => updateFields({ howLongM: e.target.valueAsNumber })} 
+                value={amount}
+                onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
+                autoFocus 
                 required></input>
-                </div>
+            </div>
 
-                <div className="form-item">
-                <label>Monthly Investment: </label> 
-                <input 
-                style={{display: 'block'}}
-                type='number' 
-                value={investment}
-                onChange={e => updateFields({ investment: e.target.valueAsNumber })} 
-                required></input>
-                </div>
+            <div className="form-item">
+            <label>Time: </label> 
+            <input 
+            type='number' 
+            value={howLongM}
+            onChange={e => updateFields({ howLongM: e.target.valueAsNumber })} 
+            required></input>
+            </div>
 
-                <div className="form-item">
-                <label>Interest Rate: </label>
-                <input 
-                type='number' 
-                value={interestRate}
-                onChange={e => updateFields({ interestRate: e.target.valueAsNumber })} 
-                required></input>
-                </div>
-            {/* </div> */}
+            <div className="form-item">
+            <label>Monthly Investment: </label> 
+            <input 
+            style={{display: 'block'}}
+            type='number' 
+            value={investment}
+            onChange={e => updateFields({ investment: e.target.valueAsNumber })} 
+            required></input>
+            </div>
+
+            <div className="form-item">
+            <label>Interest Rate: </label>
+            <input 
+            type='number' 
+            value={interestRate}
+            onChange={e => updateFields({ interestRate: e.target.valueAsNumber })} 
+            required></input>
+            </div>
         </>
     )
 }

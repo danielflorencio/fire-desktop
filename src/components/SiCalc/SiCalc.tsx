@@ -42,16 +42,18 @@ export default function SiCalculator(){
 
     return(
         <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
-            <h4>Si Cal Step {currentStepIndex + 1} / {steps.length}</h4>
+            <p className="mb-4 text-center" style={{margin: '1vh 1vw'}}><strong>Simple Interest Calculator.</strong></p>
             {currentStepIndex === 0 ? (
-            <form onSubmit={handleSubmit}>
-                {step}
-                <button className='btn btn-primary' type='submit'>Do it</button>
-            </form>
+            <div className="forms-container">
+                <form onSubmit={handleSubmit}>
+                    {step}
+                    <button className='btn btn-primary' type='submit'>Simulate</button>
+                </form>
+            </div>
             ) : (
                 <>
                 {step}
-                <button className='btn btn-primary' onClick={back}>return</button>
+                <button className='btn btn-primary' onClick={back}>New Simulation</button>
                 </>
                 )
             }                        
@@ -66,13 +68,17 @@ type SimulationFormProps = FormData & {
 export function SiForm({amount, howLongM, interestRate, interestTimeFrame, howLongTimeFrame, updateFields} : SimulationFormProps){   
     return(
         <>
-            <label>Value invested: <input 
-            type='number' 
-            value={amount}
-            onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
-            autoFocus 
-            required></input></label>
+            <div className="form-item">
+                <label>Value invested: </label>
+                <input 
+                type='number' 
+                value={amount}
+                onChange={e => updateFields({ amount: e.target.valueAsNumber })} 
+                autoFocus 
+                required></input>
+            </div>
 
+            <div className="form-item">
             <label className="d-inline">Interest Rate: </label>
             <div className="d-flex">
                 <input 
@@ -81,24 +87,27 @@ export function SiForm({amount, howLongM, interestRate, interestTimeFrame, howLo
                 onChange={e => updateFields({ interestRate: e.target.valueAsNumber })} 
                 required></input>
 
-                <select value={interestTimeFrame} onChange={e => updateFields({ interestTimeFrame: e.target.value})}>
+                <select className='d-inline' value={interestTimeFrame} onChange={e => updateFields({ interestTimeFrame: e.target.value})}>
                     <option value="annual">Annual</option>
                     <option value="monthly">Monthly</option>
                 </select>
             </div>
+            </div>
             
-            <label className="d-inline">Time: </label>
-            <div className="d-flex">
-                <input 
-                type='number' 
-                value={howLongM}
-                onChange={e => updateFields({ howLongM: e.target.valueAsNumber })} 
-                required></input>
-                
-                <select value={howLongTimeFrame} onChange={e => updateFields({ howLongTimeFrame: e.target.value})}>
-                    <option value="annual">Annual</option>
-                    <option value="monthly">Monthly</option>
-                </select>
+            <div className="form-item">
+                <label className="d-inline">Time: </label>
+                <div className="d-flex">
+                    <input 
+                    type='number' 
+                    value={howLongM}
+                    onChange={e => updateFields({ howLongM: e.target.valueAsNumber })} 
+                    required></input>
+                    
+                    <select value={howLongTimeFrame} onChange={e => updateFields({ howLongTimeFrame: e.target.value})}>
+                        <option value="annual">Annual</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
             </div>
             <br/>
         </>

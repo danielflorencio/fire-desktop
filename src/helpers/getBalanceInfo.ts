@@ -1,5 +1,5 @@
-import { Expense } from "../../types/expense"
-import { categories } from "../../data/categories"
+import { Expense } from "../types/expense"
+import { categories } from "../data/categories"
 export function getTotalBalance(expenses: Expense[]){
     let incomeCount = 0 
     let expenseCount = 0

@@ -35,7 +35,11 @@ main {
     justify-content: center;
 }
 .form-item{
-
+    height: fit-content;
+    margin-bottom: 3vh;
+}
+.form-item:last-child{
+    margin: 0;
 }
 .form-item label{
     display: block;
@@ -43,7 +47,7 @@ main {
     font-weight: 550;
 }
 .form-item input{
-    margin-bottom: 3vh;
+    /* margin-bottom: 3vh; */
 }
 @media (max-width: 968px) {
     main{
