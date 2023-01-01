@@ -1,5 +1,5 @@
-export default function BlockTitle({title}: string){
+export default function BlockTitle(){
     return(
-        <h3>{title}</h3>
+        <></>
     )
 }

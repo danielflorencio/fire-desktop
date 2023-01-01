@@ -1,10 +1,10 @@
-import {SimulationData} from '../SiCalc/SiCalc'
 import { Line } from 'react-chartjs-2'
+import { FormData } from '../SiCalc/SiCalc';
 import { Chart as ChartJS, CategoryScale } from 'chart.js/auto'
 
 ChartJS.register(CategoryScale); // https://www.youtube.com/watch?v=BM2nC16y4ck
 
-export default function SiGraph({amount, investment, howLongM, interestRate, howLongTimeFrame, interestTimeFrame}: SimulationData){
+export default function SiGraph({amount, investment, howLongM, interestRate, howLongTimeFrame, interestTimeFrame}: FormData){
 
     let newAmountArray: number[] = [amount]
 

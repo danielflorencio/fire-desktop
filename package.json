@@ -1,12 +1,15 @@
 {
+  "homepage": "https://danielflorencio.github.io/fire_advisor",
   "name": "fire_advisor",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
@@ -19,6 +22,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
+    "react-responsive": "^9.0.2",
     "react-router-dom": "^6.5.0",
     "redux": "^4.2.0"
   },
@@ -26,6 +30,7 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
+    "gh-pages": "^4.0.0",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
   }

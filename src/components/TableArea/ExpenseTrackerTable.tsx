@@ -12,10 +12,10 @@ export const ExpensesTable = ({list}: Props) => {
         <>
             <div className='table'>
                 <div className='table-titles'>
-                    <div className='table-title'><h2>Date</h2></div>
-                    <div className='table-title'><h2>Category</h2></div>
-                    <div className='table-title'><h2>Item</h2></div>
-                    <div className='table-title'><h2>Value</h2></div>
+                    <div className='table-title'><p><strong>Date</strong></p></div>
+                    <div className='table-title'><p><strong>Category</strong></p></div>
+                    <div className='table-title'><p><strong>Item</strong></p></div>
+                    <div className='table-title'><p><strong>Value</strong></p></div>
                 </div>
                 {
                     list.map((expense, index) =>(

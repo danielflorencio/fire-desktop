@@ -1,10 +1,10 @@
-import {SimulationData} from '../CiCalc/CiCalc'
+import {FormData} from '../CiCalc/CiCalc'
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS, CategoryScale } from 'chart.js/auto'
 
 ChartJS.register(CategoryScale); // https://www.youtube.com/watch?v=BM2nC16y4ck
 
-export default function CiGraph({amount, investment, howLongM, interestRate}: SimulationData){
+export default function CiGraph({amount, investment, howLongM, interestRate}: FormData){
         
     let newAmountArray: number[] = [amount]
     
