@@ -14,7 +14,7 @@ export default function Navbar(){
               </a>
     
               <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-              <CustomButton to='/' name='Home' child={<AiFillHome/>}/>
+              <CustomButton to='/fire_advisor' name='Home' child={<AiFillHome/>}/>
               <CustomButton to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
               <CustomButton to='/calculators' name='Calculators' child={<AiFillCalculator/>}/>
                 {/* <li>
