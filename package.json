@@ -5,11 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "build": "tsc && vite build",
-    "deploy": "gh-pages -d build"
+    "build": "vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
