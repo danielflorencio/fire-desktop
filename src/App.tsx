@@ -17,7 +17,7 @@ export default function App() {
       <main className={isSmallScreen ? '' : 'overflow-auto'}>
         <div className='main-content-container'>
           <Routes>
-            <Route path='/' element={<HomePage/>}/>
+            <Route path='/fire_advisor' element={<HomePage/>}/>
             <Route path='expenses' element={<ExpenseTracker/>}/>
             <Route path='calculators' element={<CalculatorsPage/>}/>
             <Route path='calculators/compound_interest_calculator' element={<CiCalculator/>}/>
