@@ -13,7 +13,7 @@ export default function Sidebar(){
             </a>
             <hr/>
             <ul className="nav nav-pills flex-column mb-auto">
-            <CustomLink to='/fire_advisor' name='Home' child={<AiFillHome/>}/>
+            <CustomLink to='/' name='Home' child={<AiFillHome/>}/>
             <CustomLink to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
             <CustomLink to='/calculators' name='Calculators' child={<AiFillCalculator/>}/>
 
