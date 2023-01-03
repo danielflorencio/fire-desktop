@@ -1,10 +1,11 @@
 {
-  "homepage": "https://danielflorencio.github.io/",
+  "homepage": "https://danielflorencio.github.io/fire_advisor",
   "name": "fire_advisor",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
     "deploy": "gh-pages -d dist"
   },
