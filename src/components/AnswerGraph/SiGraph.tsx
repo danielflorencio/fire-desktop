@@ -40,5 +40,5 @@ export default function SiGraph({amount, investment, howLongM, interestRate, how
       },],
     };
 
-    return <Line data={chartData} />
+    return <Line data={chartData}/>
 }

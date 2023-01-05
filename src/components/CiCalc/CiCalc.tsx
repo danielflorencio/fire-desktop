@@ -37,8 +37,7 @@ export default function CiCalculator(){
     }
 
     return(
-        <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
-            <p className="mb-4 text-center" style={{margin: '1vh 1vw'}}><strong>Compound Interest Calculator.</strong></p>
+        <>
             {currentStepIndex === 0 ? (
             <div className="forms-container">
             <form onSubmit={handleSubmit}>
@@ -47,13 +46,13 @@ export default function CiCalculator(){
             </form>
             </div>
             ) : (
-                <>
+                <div className="h-75 w-75 d-flex align-items-center justify-content-center flex-column gap-5">
                 {step}
                 <button className='btn btn-primary' onClick={back}>New Simulation</button>
-                </>
+                </div>
                 )
             }                        
-        </div>
+        </>
     )
 }
 
@@ -64,7 +63,8 @@ type SimulationFormProps = FormData & {
 export function CiForm({amount, howLongM, investment, interestRate, updateFields} : SimulationFormProps){
     
     return(
-        <>
+        <div className="shadow-lg p-3 mb-5 bg-white rounded">
+            <p className="mb-4 text-center" style={{margin: '1vh 1vw'}}><strong>Compound Interest Calculator.</strong></p>
             <div className="form-item">
                 <label>Initial value: </label>
 
@@ -103,6 +103,6 @@ export function CiForm({amount, howLongM, investment, interestRate, updateFields
             onChange={e => updateFields({ interestRate: e.target.valueAsNumber })} 
             required></input>
             </div>
-        </>
+        </div>
     )
 }

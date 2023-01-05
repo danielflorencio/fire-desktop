@@ -41,8 +41,7 @@ export default function SiCalculator(){
     }
 
     return(
-        <div className='box-content-container shadow-lg p-3 mb-5 bg-white rounded'>
-            <p className="mb-4 text-center" style={{margin: '1vh 1vw'}}><strong>Simple Interest Calculator.</strong></p>
+        <>        
             {currentStepIndex === 0 ? (
             <div className="forms-container">
                 <form onSubmit={handleSubmit}>
@@ -51,14 +50,15 @@ export default function SiCalculator(){
                 </form>
             </div>
             ) : (
-                <>
-                {step}
-                <button className='btn btn-primary' onClick={back}>New Simulation</button>
-                </>
+                <div className="h-75 w-75 d-flex align-items-center justify-content-center flex-column gap-5">
+                    {step}
+                    <button className='btn btn-primary' onClick={back}>New Simulation</button>
+                </div>
                 )
-            }                        
-        </div>
+            }   
+        </>                     
     )
+
 }
 
 type SimulationFormProps = FormData & {
@@ -67,7 +67,8 @@ type SimulationFormProps = FormData & {
 
 export function SiForm({amount, howLongM, interestRate, interestTimeFrame, howLongTimeFrame, updateFields} : SimulationFormProps){   
     return(
-        <>
+        <div className='shadow-lg p-3 mb-5 bg-white rounded'>
+            <p className="mb-4 text-center" style={{margin: '1vh 1vw'}}><strong>Simple Interest Calculator.</strong></p>
             <div className="form-item">
                 <label>Value invested: </label>
                 <input 
@@ -110,6 +111,7 @@ export function SiForm({amount, howLongM, interestRate, interestTimeFrame, howLo
                 </div>
             </div>
             <br/>
-        </>
+        </div>
+        
     )
 }

@@ -7,6 +7,17 @@ main {
     margin: 0;
     padding: 0;
 }
+h1{
+    font-size: 38px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 22px;
+}
+h1, h2, h3{font-weight: 520;}
+
 .main-content-container{
     padding: 2rem 4rem;
     display: flex;
@@ -17,13 +28,15 @@ main {
     height: 100%;
     margin: 0;
 } 
-.box-content-container{
-    min-height: 70vh;
+/* .box-content-container{
+    width: 40%;
+    height: fit-content;
+    padding-bottom: 4vh;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     margin: auto;
-}
+} */
 .app-container{
     display: flex;
     width: 100vw;
