@@ -1,7 +1,6 @@
 import { useState, FormEvent } from "react"
 import { useMultiStepForm } from "../../customHooks/useMultiStepForm";
 import SiGraph from '../AnswerGraph/SiGraph'
-
 export type FormData = {
     amount: number,
     investment: number,

@@ -33,7 +33,7 @@ export default function SiGraph({amount, investment, howLongM, interestRate, how
     const chartData = {
       labels: arrayOfMonths,
       datasets: [{
-        label: 'my first line chart',
+        label: 'Simple Interest Chart',
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         data: newAmountArray,

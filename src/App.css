@@ -64,9 +64,6 @@ h1, h2, h3{font-weight: 520;}
     margin: 0;
     font-weight: 550;
 }
-.form-item input{
-    /* margin-bottom: 3vh; */
-}
 @media (max-width: 968px) {
     main{
         width: 100vw;

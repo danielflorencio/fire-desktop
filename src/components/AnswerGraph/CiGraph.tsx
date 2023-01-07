@@ -25,7 +25,7 @@ export default function CiGraph({amount, investment, howLongM, interestRate}: Fo
     const chartData = {
       labels: arrayOfMonths,
       datasets: [{
-        label: 'my first line chart',
+        label: 'Compound Interest Chart',
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         data: newAmountArray,
