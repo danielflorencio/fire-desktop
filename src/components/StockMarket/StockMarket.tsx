@@ -13,12 +13,12 @@ export default function StockMarket(){
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<any>(null);
 
-    const symbols = ['MSFT', 'NFLX', 'STRIPE', 'SHOP', 'META', 'AMZN', 'GOOGL', 'UBER', 'TSLA', 'AAPL'];
+    // const symbols = ['MSFT', 'NFLX', 'STRIPE', 'SHOP', 'META', 'AMZN', 'GOOGL', 'UBER', 'TSLA', 'AAPL'];
+    const symbols = ['MSFT', 'NFLX']
 
-    const apiKey = 'YOUR_API_KEY';
 
     useEffect(() => {
-        const apiKey = 'YOUR_API_KEY';
+        const apiKey = '';
     
         const fetchStockData = async () => {
           setIsLoading(true);
@@ -30,12 +30,15 @@ export default function StockMarket(){
             );
             const responses = await Promise.all(requests);
             const data = await Promise.all(responses.map(response => response.json()));
+            console.log('Prior to setStockData')
+            console.log("Overall Data: ", data)
             setStockData(
-              data.map((item: any) => ({
+              data.map((item, index): any => ({
+                
                 symbol: item['Global Quote']['01. symbol'],
-                price: parseFloat(item['Global Quote']['05. price']),
-                change: parseFloat(item['Global Quote']['09. change']),
-                changePercent: parseFloat(item['Global Quote']['10. change percent'].slice(0, -1))
+                price: parseFloat(item[index]['05. price']),
+                change: parseFloat(item[index]['09. change']),
+                changePercent: parseFloat(item[index]['10. change percent'].slice(0, -1))
               }))
             );
             setIsLoading(false);

@@ -3,6 +3,7 @@ import { AiFillHome } from 'react-icons/ai'
 import { FaMoneyBillWave } from 'react-icons/fa'
 import {AiFillCalculator, AiFillFire} from 'react-icons/ai'
 import CustomLink  from '../RouterComponents/CustomLink'
+import StockMarket from '../StockMarket/StockMarket'
 
 export default function Sidebar(){
     return(
@@ -16,7 +17,7 @@ export default function Sidebar(){
             <CustomLink to='/fire_advisor' name='Home' child={<AiFillHome/>}/>
             <CustomLink to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
             <CustomLink to='/calculators' name='Calculators' child={<AiFillCalculator/>}/>
-
+            <CustomLink to='/stock-market' name='Stock Market' child={<StockMarket/>}/>
             {/* <CustomLink to='' name='Stock Market' child={}/> */}
             {/* <CustomLink to='' name='Productivity Booster' child={}/> */}
             {/* <CustomLink to='/incomes' name='Incomes' child={<AiFillCalculator/>}/> */}
