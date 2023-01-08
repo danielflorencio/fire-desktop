@@ -1,7 +1,8 @@
 import CustomButton from '../RouterComponents/CustomButton'
 import { AiFillHome } from 'react-icons/ai'
 import { FaMoneyBillWave } from 'react-icons/fa'
-import {AiFillCalculator, AiFillFire} from 'react-icons/ai'
+import {AiFillCalculator} from 'react-icons/ai'
+import { BsFillFileBarGraphFill } from 'react-icons/bs'
 import './styles.css'
 export default function Navbar(){
     return(
@@ -17,6 +18,7 @@ export default function Navbar(){
               <CustomButton to='/fire_advisor' name='Home' child={<AiFillHome/>}/>
               <CustomButton to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
               <CustomButton to='/calculators' name='Calculators' child={<AiFillCalculator/>}/>
+              <CustomButton to='/stock-market' name='Calculators' child={<BsFillFileBarGraphFill/>}/>
                 {/* <li>
                   <a href="#" className="nav-link text-secondary">
                     <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#home"/></svg>
