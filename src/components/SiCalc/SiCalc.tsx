@@ -42,7 +42,7 @@ export default function SiCalculator(){
     return(
         <>        
             {currentStepIndex === 0 ? (
-            <div className="forms-container">
+            <div className="shadow-lg p-3 mb-5 bg-white rounded forms-container">
                 <form onSubmit={handleSubmit}>
                     {step}
                     <button className='btn btn-primary' type='submit'>Simulate</button>
@@ -66,7 +66,7 @@ type SimulationFormProps = FormData & {
 
 export function SiForm({amount, howLongM, interestRate, interestTimeFrame, howLongTimeFrame, updateFields} : SimulationFormProps){   
     return(
-        <div className='shadow-lg p-3 mb-5 bg-white rounded'>
+        <>
             <p className="mb-4 text-center" style={{margin: '1vh 1vw'}}><strong>Simple Interest Calculator.</strong></p>
             <div className="form-item">
                 <label>Value invested: </label>
@@ -110,7 +110,7 @@ export function SiForm({amount, howLongM, interestRate, interestTimeFrame, howLo
                 </div>
             </div>
             <br/>
-        </div>
+        </>
         
     )
 }
