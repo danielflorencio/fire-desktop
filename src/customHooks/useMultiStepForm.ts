@@ -6,7 +6,6 @@
 
 // Class on this hook: https://www.youtube.com/watch?v=uDCBSnWkuH0&t=3s
 
-
 import { ReactElement, useState } from "react";
 
 export function useMultiStepForm(steps: ReactElement[]){

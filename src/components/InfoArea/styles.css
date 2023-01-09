@@ -4,15 +4,9 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     min-height: 12vh;
     margin-bottom: 2vh;
-    display: flex;
-    align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
-    /* gap: 1rem; */
 }
 .month-selector-container{
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
     width: 50%;
@@ -21,22 +15,7 @@
     margin: 0 2vw;   
 }
 .resume-area{
-    display: flex;
-    /* flex-wrap: wrap; */
     width: 50%;
-    
-    /* margin: 0 0.5rem; */
-
-    /* margin-top: 1vh;
-    margin-bottom: 0;
-    margin-left: 2rem;
-    margin-right: 2rem; */
-/* 
-    padding-top: 1vh;
-    padding-bottom: 0;
-    padding-left: 2rem;
-    padding-right: 2rem; */
-    align-items: center;
     justify-content: space-around;
 }
 .resume-item{

@@ -28,8 +28,8 @@ export default function InfoArea({currentMonth, onMonthChange, income, expense} 
     
     return(
     <>
-        <div className="info-area-container">
-            <div className='month-selector-container' style={{width: '50%'}}>
+        <div className="info-area-container d-flex align-items-center flex-wrap">
+            <div className='month-selector-container d-flex align-items-center' style={{width: '50%'}}>
                 <i onClick={handlePrevMonth} style={{cursor: 'pointer'}}>
                     <IconContext.Provider value={{ size: '1.6em'}}>
                         <BsFillArrowLeftCircleFill/>
@@ -42,7 +42,7 @@ export default function InfoArea({currentMonth, onMonthChange, income, expense} 
                     </IconContext.Provider>
                 </i>
             </div>
-            <div className='resume-area'>
+            <div className='resume-area d-flex align-items-center'>
                 <ResumeExpenses title='Revenue' value={income}/>
                 <ResumeExpenses title='Expenses' value={expense}/>
                 <ResumeExpenses title='Balance' value={income - expense}/>

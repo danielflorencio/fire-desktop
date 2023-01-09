@@ -52,7 +52,7 @@ export default function AddExpense({ onAdd }: Props){
   }    
   
   return(
-      <div className='info-area-container' style={{padding: '1vh 1vw'}}>
+      <div className='info-area-container d-flex align-items-center flex-wrap' style={{padding: '1vh 1vw'}}>
           <div>
               <div className='text-center'><strong>Date</strong></div>
               <label><input type="date" value={dateField} onChange={e => setDateField(e.target.value)}></input></label>
