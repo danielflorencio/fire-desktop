@@ -21,9 +21,9 @@ export default function HomePage(){
                     </div>
                     <div className='welcome-message'><h3>Welcome to <span className='fire-color-gradient'>Fire</span>, your Financial Independence Advisor. </h3></div>
                 </div>
-                <div className='tips-container'>There's no tips available for you at the moment. Keep using the app so we can analyze your data and provide you with the best valuable information as possible.</div>
+                <div className='tips-container w-100'>There's no tips available for you at the moment. Keep using the app so we can analyze your data and provide you with the best valuable information as possible.</div>
             </div>
-            <div className='user-data-information-container'>
+            <div className='d-flex h-100 w-100 mr-1 flex-wrap justify-content-around'>
                 <div className="option-container">
                     <BalanceInfo title='Current Balance' status=''/>
                 </div>
