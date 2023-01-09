@@ -2,7 +2,6 @@ import './styles.css'
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
 import { BsFillArrowRightCircleFill} from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib'
-import ResumeExpenses from '../ResumeExpenses/ResumeExpenses'
 type Props = {
     currentMonth: string,
     onMonthChange: (newMonth: string) => void;
@@ -27,27 +26,34 @@ export default function InfoArea({currentMonth, onMonthChange, income, expense} 
     }
     
     return(
-    <>
-        <div className="info-area-container d-flex align-items-center flex-wrap">
-            <div className='month-selector-container d-flex align-items-center' style={{width: '50%'}}>
-                <i onClick={handlePrevMonth} style={{cursor: 'pointer'}}>
-                    <IconContext.Provider value={{ size: '1.6em'}}>
-                        <BsFillArrowLeftCircleFill/>
-                    </IconContext.Provider>
-                </i>
-                <h4>{currentMonth}</h4>
-                <i onClick={handleNextMonth} style={{cursor: 'pointer'}}>
-                    <IconContext.Provider value={{ size: '1.6em'}}>
-                        <BsFillArrowRightCircleFill/>
-                    </IconContext.Provider>
-                </i>
+    <div className="info-area-container d-flex align-items-center flex-wrap">
+        <div className='month-selector-container d-flex align-items-center'>
+            <i onClick={handlePrevMonth} style={{cursor: 'pointer'}}>
+                <IconContext.Provider value={{ size: '1.6em'}}>
+                    <BsFillArrowLeftCircleFill/>
+                </IconContext.Provider>
+            </i>
+            <h4>{currentMonth}</h4>
+            <i onClick={handleNextMonth} style={{cursor: 'pointer'}}>
+                <IconContext.Provider value={{ size: '1.6em'}}>
+                    <BsFillArrowRightCircleFill/>
+                </IconContext.Provider>
+            </i>
+        </div>
+        <div className='resume-area d-flex align-items-center'>
+            <div className='resume-item'>
+                <h2>Revenue</h2>
+                <p>$$ {income}</p>
             </div>
-            <div className='resume-area d-flex align-items-center'>
-                <ResumeExpenses title='Revenue' value={income}/>
-                <ResumeExpenses title='Expenses' value={expense}/>
-                <ResumeExpenses title='Balance' value={income - expense}/>
+            <div className='resume-item'>
+                <h2>Expenses</h2>
+                <p>$$ {expense}</p>
+            </div>
+            <div className='resume-item'>
+                <h2>Balance</h2>
+                <p>$$ {income - expense}</p>
             </div>
         </div>
-    </>
+    </div>
     )
 }
