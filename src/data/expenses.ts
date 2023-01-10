@@ -1,4 +1,5 @@
 import { Expense } from "../types/expense";
+import { categories } from "./categories";
 export const expenses: Expense[] = [ 
     { date: new Date(2022, 11, 5), category: 'food', title: 'Chicken', value: 22.7 },
     { date: new Date(2022, 11, 14), category: 'food', title: 'Energetic', value: 8.8 },

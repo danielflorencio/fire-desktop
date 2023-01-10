@@ -4,5 +4,6 @@ export type Category = {
         color: string;
         bgColor: string;
         expense: boolean;
+        categoryId: number;
     }
 }

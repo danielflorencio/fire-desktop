@@ -32,14 +32,3 @@
     margin: auto;
     text-align: center;
 }
-
-@media (max-width: 968px) {
-    .table-row .table-item-container:nth-child(2){
-        /* width: 5rem; */
-    }
-}
-@media (max-width: 767px) {
-    .table{
-        /* width: 100%; */
-    }
-}
