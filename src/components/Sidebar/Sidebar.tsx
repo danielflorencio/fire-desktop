@@ -15,9 +15,9 @@ export default function Sidebar(){
             <hr/>
             <ul className="nav nav-pills flex-column mb-auto">
             <CustomLink to='/fire_advisor' name='Home' child={<AiFillHome/>}/>
-            <CustomLink to='/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
-            <CustomLink to='/calculators' name='Calculators' child={<AiFillCalculator/>}/>
-            <CustomLink to='/stock-market' name='Stock Market' child={<BsFillFileBarGraphFill/>}/>
+            <CustomLink to='/fire_advisor/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
+            <CustomLink to='/fire_advisor/calculators' name='Calculators' child={<AiFillCalculator/>}/>
+            <CustomLink to='/fire_advisor/stock-market' name='Stock Market' child={<BsFillFileBarGraphFill/>}/>
             {/* <CustomLink to='' name='Stock Market' child={}/> */}
             {/* <CustomLink to='' name='Productivity Booster' child={}/> */}
             {/* <CustomLink to='/incomes' name='Incomes' child={<AiFillCalculator/>}/> */}

@@ -19,11 +19,11 @@ export default function App() {
         <div className='main-content-container'>
           <Routes>
             <Route path='fire_advisor' element={<HomePage/>}/>
-            <Route path='expenses' element={<ExpenseTracker/>}/>
-            <Route path='calculators' element={<CalculatorsPage/>}/>
-            <Route path='calculators/compound_interest_calculator' element={<CiCalculator/>}/>
-            <Route path='calculators/simple_interest_calculator' element={<SiCalculator/>}/>
-            <Route path='stock-market' element={<StockMarket/>}/>
+            <Route path='fire_advisor/expenses' element={<ExpenseTracker/>}/>
+            <Route path='fire_advisor/calculators' element={<CalculatorsPage/>}/>
+            <Route path='fire_advisor/calculators/compound_interest_calculator' element={<CiCalculator/>}/>
+            <Route path='fire_advisor/calculators/simple_interest_calculator' element={<SiCalculator/>}/>
+            <Route path='fire_advisor/stock-market' element={<StockMarket/>}/>
           </Routes>
         </div>
       </main>
