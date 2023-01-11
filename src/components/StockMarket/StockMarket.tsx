@@ -19,7 +19,7 @@ export default function StockMarket(){
 
     useEffect(() => {
         const apiKey = '';
-    
+        // const apiKey = '';
         const fetchStockData = async () => {
           setIsLoading(true);
           setError(null);
@@ -28,22 +28,34 @@ export default function StockMarket(){
             const requests = symbols.map(symbol =>
               fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`)
             );
+            console.log('requests: ', requests)
             const responses = await Promise.all(requests);
+            console.log('responses: ', responses)
             const data = await Promise.all(responses.map(response => response.json()));
-            console.log('Prior to setStockData')
-            console.log("Overall Data: ", data)
+            console.log("data: ", data)
+            
+            
             setStockData(
-              data.map((item, index): any => ({
+              data.map((item): any => ({
                 
                 symbol: item['Global Quote']['01. symbol'],
-                price: parseFloat(item[index]['05. price']),
-                change: parseFloat(item[index]['09. change']),
-                changePercent: parseFloat(item[index]['10. change percent'].slice(0, -1))
+                price: parseFloat(item['Global Quote']['05. price']),
+                change: parseFloat(item['Global Quote']['09. change']),
+                changePercent: parseFloat(item['Global Quote']['10. change percent'].slice(0, -1))
+                // changePercent: item['Global Quote']['10. change percent']
               }))
             );
+
+
+
+
+
+
+            console.log('Stock Data: ', stockData)
             setIsLoading(false);
           } catch (error) {
             setError(error);
+            console.log('Error: ', error)
           }
         };
     
