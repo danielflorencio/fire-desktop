@@ -1,9 +1,5 @@
 import { useAppSelector } from '../../hooks';
-type Props = {
-    title: string,
-    status: string
-}
-export default function BalanceInfo({title, status}: Props){
+export default function BalanceInfo({title, status}: {title: string, status: string}){
     const value = useAppSelector(state => state.expenses.totalBalance); 
     return(
         <>

@@ -1,28 +1,25 @@
-import './styles.css'
 import { AiFillHome } from 'react-icons/ai'
 import { FaMoneyBillWave } from 'react-icons/fa'
-import {AiFillCalculator, AiFillFire, AiOutlineStock} from 'react-icons/ai'
+import {AiFillCalculator, AiFillFire} from 'react-icons/ai'
 import CustomLink  from '../RouterComponents/CustomLink'
 import { BsFillFileBarGraphFill } from 'react-icons/bs'
 
 export default function Sidebar(){
     return(
-        <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar-width-280px overflow-hidden">
+        <div style={{width: '200px'}} className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark overflow-hidden">
             <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <svg className="bi pe-none me-2" width="16" height="16"><AiFillFire/></svg>
                 <span className="fs-4">Fire</span>
             </a>
             <hr/>
             <ul className="nav nav-pills flex-column mb-auto">
-            <CustomLink to='/fire_advisor' name='Home' child={<AiFillHome/>}/>
-            <CustomLink to='/fire_advisor/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
-            <CustomLink to='/fire_advisor/calculators' name='Calculators' child={<AiFillCalculator/>}/>
-            <CustomLink to='/fire_advisor/stock-market' name='Stock Market' child={<BsFillFileBarGraphFill/>}/>
-            {/* <CustomLink to='' name='Stock Market' child={}/> */}
+            <CustomLink to='/fire_advisor' name='Home' icon={<AiFillHome/>}/>
+            <CustomLink to='/fire_advisor/expenses' name='Expenses' icon={<FaMoneyBillWave/>}/>
+            <CustomLink to='/fire_advisor/calculators' name='Calculators' icon={<AiFillCalculator/>}/>
+            <CustomLink to='/fire_advisor/stock-market' name='Stock Market' icon={<BsFillFileBarGraphFill/>}/>
             {/* <CustomLink to='' name='Productivity Booster' child={}/> */}
             {/* <CustomLink to='/incomes' name='Incomes' child={<AiFillCalculator/>}/> */}
             {/* <CustomLink to='' name='Feedback' child={}/> */}
-            {/* <CustomLink to='' name='Crypto Market' child={}/> */}
             {/* <CustomLink to='' name='Support us' child={}/> */}
             {/* <CustomLink to='' name='Charity' child={}/> */}
             </ul>

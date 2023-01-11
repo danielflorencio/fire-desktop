@@ -3,10 +3,7 @@ import { Expense } from '../../types/expense';
 import { categories } from '../../data/categories';
 import { newDateAdjusted } from '../../helpers/dateFilter';
 
-type Props = {
-  onAdd: (expense: Expense) => void;
-};
-export default function AddExpense({ onAdd }: Props){
+export default function AddExpense({ onAdd }: {onAdd: (expense: Expense) => void}){
     
   // A useReducer hook could probably help me simplify the code below. 
 

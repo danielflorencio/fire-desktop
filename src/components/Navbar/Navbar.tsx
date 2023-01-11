@@ -14,10 +14,10 @@ export default function Navbar(){
               </a>
     
               <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-              <CustomButton to='/fire_advisor' name='Home' child={<AiFillHome/>}/>
-              <CustomButton to='/fire_advisor/expenses' name='Expenses' child={<FaMoneyBillWave/>}/>
-              <CustomButton to='/fire_advisor/calculators' name='Calculators' child={<AiFillCalculator/>}/>
-              <CustomButton to='/fire_advisor/stock-market' name='Stocks' child={<BsFillFileBarGraphFill/>}/>
+              <CustomButton to='/fire_advisor' name='Home' icon={<AiFillHome/>}/>
+              <CustomButton to='/fire_advisor/expenses' name='Expenses' icon={<FaMoneyBillWave/>}/>
+              <CustomButton to='/fire_advisor/calculators' name='Calculators' icon={<AiFillCalculator/>}/>
+              <CustomButton to='/fire_advisor/stock-market' name='Stocks' icon={<BsFillFileBarGraphFill/>}/>
                 {/* <li>
                   <a href="#" className="nav-link text-secondary">
                     <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#home"/></svg>

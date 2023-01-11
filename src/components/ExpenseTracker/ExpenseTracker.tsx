@@ -1,8 +1,8 @@
 import { Expense } from '../../types/expense'
 import { useState, useEffect } from 'react'
 import { getCurrentMonth, filterListByMonth } from '../../helpers/dateFilter'
-import { DesktopExpensesTable } from '../DesktopExpensesTable/DesktopExpensesTable'
-import { MobileExpensesTable } from '../MobileExpensesTable/MobileExpensesTable'
+import { DesktopExpensesTable } from '../ExpensesTable/DesktopExpensesTable'
+import { MobileExpensesTable } from '../ExpensesTable/MobileExpensesTable'
 import AddExpense from '../AddExpenseForm/AddExpenseForm'
 import InfoArea from '../InfoArea/InfoArea'
 import { useDispatch } from 'react-redux';
