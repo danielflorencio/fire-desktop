@@ -71,8 +71,8 @@ export default function AddExpense({ onAdd }: {onAdd: (expense: Expense) => void
               <label><input type="text" value={titleField} onChange={e => setTitleField(e.target.value)}></input></label>
           </div>
           <div>
-              <div className='text-center'><strong>Value</strong></div>
-              <label><input type="number" style={{width: '5vw'}} value={valueField} onChange={e => setValueField(parseFloat(e.target.value))}></input></label>
+              <div className='text-center'><label><strong>Value</strong></label></div>
+              <input type="number" value={valueField} onChange={e => setValueField(parseFloat(e.target.value))}></input>
           </div>
           <div>
               <label>

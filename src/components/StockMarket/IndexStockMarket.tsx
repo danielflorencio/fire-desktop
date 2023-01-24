@@ -9,7 +9,7 @@ export interface StockData {
 }
 export default function IndexStockMarket(){
     const [stocksToSearch, setStocksToSearch] = useState<StockData[]>([])
-    const apiKey = ''A7P1OMJQ0YAU0VR3;
+    const apiKey = '';
 
     return(
         <>

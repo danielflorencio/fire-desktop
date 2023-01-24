@@ -33,10 +33,10 @@ export default function ChooseStocks({stocksToSearch, setStocksToSearch, apiKey}
   
     return(
       <>
-        <form onSubmit={e => handleSubmit(e)}>
-        <label>Search for the desired stock: </label>
-        <input type='text' value={searchInputField} onChange={e => handleOnSearchChange(e.target.value)}></input>
-        <button type="submit">Search</button>
+        <form className="d-flex flex-column" onSubmit={e => handleSubmit(e)}>
+        <label className="mt-3 mb-2" ><h3><strong>Search for the desired stock </strong></h3></label>
+        <input className='mb-3' type='text' value={searchInputField} onChange={e => handleOnSearchChange(e.target.value)}></input>
+        <button className="btn btn-primary mb-3" type="submit">Search</button>
         </form>
       </>
     )

@@ -23,17 +23,19 @@ export default function ShowStocks({stocksToSearch, apiKey}: ShowStocksProps){
             const requests = symbols.map(symbol =>
             fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`)
             );
+            console.log('Requests being made to the api: ', requests)
             const responses = await Promise.all(requests);
+            console.log('response being received: ', responses)
             const data = await Promise.all(responses.map(response => response.json()));     
             console.log('data being received from the api: ', data)
-            setStockData(
-              data.map((item): any => ({      
+            const newStockData = data.map((item): any => ({      
                 symbol: item['Global Quote']['01. symbol'],
                 price: parseFloat(item['Global Quote']['05. price']),
                 change: parseFloat(item['Global Quote']['09. change']),
                 changePercent: parseFloat(item['Global Quote']['10. change percent'].slice(0, -1))
-              }))
-            );
+            }))
+            console.log('newStockData', newStockData)
+            setStockData(newStockData)
             setIsLoading(false);
             console.log('data being received from the api: ', data)
           } catch (error) {
@@ -53,7 +55,6 @@ export default function ShowStocks({stocksToSearch, apiKey}: ShowStocksProps){
       console.log('stockdata getting to the render: ', stockData)
       return (
         <div className='w-100'>
-          <div style={{marginBottom: '6vh'}} className='d-flex justify-content-center align-items-center'><h1>Stocks</h1></div>
           <div style={{height: "6vh"}} className='d-flex align-items-center rounded border w-100 justify-content-around'>
             <div>Stock</div>
             <div>Price</div>
