@@ -25,10 +25,6 @@ export default function ExpenseTracker(){
     useEffect(() => {
         setFilteredList(filterListByMonth(overallExpensesList, currentMonth))
     }, [overallExpensesList, currentMonth] )
-    // Search later the video where Kyle (web dev simplified) says it's not good practice to use useEffect.
-    // This useEffect is probably not necessary anymore, now that i'm using redux toolkit. 
-    // if it is necessary, i could probably simplify it by using an external custom hook "updateMonthlyExpenses"
-
 
     useEffect(() => { // This useEffect Detects when a new expense is added (filteredList state) and resets the income and expenses value that goes to the InfoArea component.
         setIncome(getMonthIncomes(filteredList));

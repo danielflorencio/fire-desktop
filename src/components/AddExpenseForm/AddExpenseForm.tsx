@@ -59,7 +59,7 @@ export default function AddExpense({ onAdd }: {onAdd: (expense: Expense) => void
               <label>
                   <select value={categoryField} onChange={e => setCategoryField(e.target.value)}>
                       <option></option>
-                      {categoryKeys.map((key, index) => (
+                      {categoryKeys.map(key => (
                         <option key={key} value={key}>{categories[key].title}</option>
                         ))
                       }

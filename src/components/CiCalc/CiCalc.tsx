@@ -28,7 +28,7 @@ export default function CiCalculator(){
 
     const { steps, currentStepIndex, step, isAnswerStep, back, next } = useMultiStepForm([
     <CiForm {...data} updateFields={updateFields}/>, 
-    <CiGraph {...data} />]) // Passing the data to all components
+    <CiGraph {...data} />])
  
     
     function handleSubmit(e: FormEvent){

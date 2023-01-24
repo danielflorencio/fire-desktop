@@ -8,7 +8,7 @@ import CiCalculator from './components/CiCalc/CiCalc';
 import SiCalculator from './components/SiCalc/SiCalc';
 import { useMediaQuery } from 'react-responsive';
 import Navbar from './components/Navbar/Navbar';
-import StockMarket from './components/StockMarket/StockMarket';
+import IndexStockMarket from './components/StockMarket/IndexStockMarket';
 export default function App() {  
   const isSmallScreen = useMediaQuery({ query: '(max-width: 968px)' });
 
@@ -23,7 +23,7 @@ export default function App() {
             <Route path='fire_advisor/calculators' element={<CalculatorsPage/>}/>
             <Route path='fire_advisor/calculators/compound_interest_calculator' element={<CiCalculator/>}/>
             <Route path='fire_advisor/calculators/simple_interest_calculator' element={<SiCalculator/>}/>
-            <Route path='fire_advisor/stock-market' element={<StockMarket/>}/>
+            <Route path='fire_advisor/stock-market' element={<IndexStockMarket/>}/>
           </Routes>
         </div>
       </main>

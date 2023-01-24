@@ -1,24 +1,20 @@
 import { useState, useEffect } from 'react';
+import { StockData } from './IndexStockMarket';
 
-interface StockData {
-    symbol: string;
-    price: number;
-    change: number;
-    changePercent: number;
+interface ShowStocksProps {
+  stocksToSearch: StockData[],
+  apiKey: string;
 }
 
-export default function StockMarket(){
-
+export default function ShowStocks({stocksToSearch, apiKey}: ShowStocksProps){
     const [stockData, setStockData] = useState<StockData[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<any>(null);
 
-    // const symbols = ['MSFT', 'NFLX', 'SHOP', 'META', 'AMZN', 'GOOGL', 'UBER', 'TSLA', 'AAPL'];
-    const symbols = ['MSFT', 'NFLX', 'SHOP']
-
-
+    const symbols = stocksToSearch.map(item => item["1. symbol"]);
+    console.log('symbols on the ShowStockMarket: ', symbols)
     useEffect(() => {
-        const apiKey = '';
+        
         const fetchStockData = async () => {
           setIsLoading(true);
           setError(null);
@@ -28,7 +24,8 @@ export default function StockMarket(){
             fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`)
             );
             const responses = await Promise.all(requests);
-            const data = await Promise.all(responses.map(response => response.json()));            
+            const data = await Promise.all(responses.map(response => response.json()));     
+            console.log('data being received from the api: ', data)
             setStockData(
               data.map((item): any => ({      
                 symbol: item['Global Quote']['01. symbol'],
@@ -38,6 +35,7 @@ export default function StockMarket(){
               }))
             );
             setIsLoading(false);
+            console.log('data being received from the api: ', data)
           } catch (error) {
             setError(error);
           }
@@ -52,7 +50,7 @@ export default function StockMarket(){
       if (isLoading) {
         return <div>Loading...</div>;
       }
-
+      console.log('stockdata getting to the render: ', stockData)
       return (
         <div className='w-100'>
           <div style={{marginBottom: '6vh'}} className='d-flex justify-content-center align-items-center'><h1>Stocks</h1></div>
@@ -63,9 +61,9 @@ export default function StockMarket(){
             <div>Change %</div>
           </div>
           {
-            stockData.map(stock => (
-              <div style={{height: "6vh", marginTop: '2vh'}} className='d-flex align-items-center rounded border w-100 justify-content-around'>
-                <div>{stock.symbol}</div>
+            stockData.map((stock,index) => (
+              <div key={index} style={{height: "6vh", marginTop: '2vh'}} className='d-flex align-items-center rounded border w-100 justify-content-around'>
+                <div>{stock.symbol.toString()}</div>
                 <div>{stock.price}</div>
                 <div className={stock.change > 0 ? 'text-success' : 'text-danger'}>{stock.change}</div>
                 <div className={stock.change > 0 ? 'text-success' : 'text-danger'}>{stock.changePercent}</div>
