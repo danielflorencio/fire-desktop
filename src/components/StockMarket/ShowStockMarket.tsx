@@ -14,7 +14,7 @@ export default function ShowStocks({stocksToSearch, apiKey}: ShowStocksProps){
     const symbols = stocksToSearch.map(item => item["1. symbol"]);
     console.log('symbols on the ShowStockMarket: ', symbols)
     useEffect(() => {
-        
+        console.log('useEffect being called')
         const fetchStockData = async () => {
           setIsLoading(true);
           setError(null);
@@ -43,10 +43,12 @@ export default function ShowStocks({stocksToSearch, apiKey}: ShowStocksProps){
           }
         };
       fetchStockData();
-    }, []);
+    }, [stocksToSearch]);
     
       if (error) {
-        return <div>An error occurred: {error.message}</div>;
+        console.log('An error occurred: ', error.message)
+        if(error.message = "item['Global Quote'] is undefined")
+        return <div>The limit of api calls per minute has been reached.</div>;
       }
     
       if (isLoading) {
