@@ -9,6 +9,7 @@ import SiCalculator from './components/SiCalc/SiCalc';
 import { useMediaQuery } from 'react-responsive';
 import Navbar from './components/Navbar/Navbar';
 import IndexStockMarket from './components/StockMarket/IndexStockMarket';
+import PortfolioFooter from './components/PortfolioFooter/PortfolioFooter';
 export default function App() {  
   const isSmallScreen = useMediaQuery({ query: '(max-width: 968px)' });
 

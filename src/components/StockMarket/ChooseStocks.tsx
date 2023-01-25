@@ -28,6 +28,7 @@ export default function ChooseStocks({stocksToSearch, setStocksToSearch, apiKey}
             .catch(error => console.error(error));
             
         } catch(error){setError(error)}
+        if(error) console.log('Error: ', error.message)
     }
     console.log('stockstoSearch value: ', stocksToSearch)
     return(

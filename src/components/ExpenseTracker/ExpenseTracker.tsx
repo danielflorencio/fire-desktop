@@ -29,7 +29,7 @@ export default function ExpenseTracker(){
     useEffect(() => { // This useEffect Detects when a new expense is added (filteredList state) and resets the income and expenses value that goes to the InfoArea component.
         setIncome(getMonthIncomes(filteredList));
         setExpense(getMonthExpenses(filteredList))
-    },[filteredList]) // I probably don't need this anymore since now i'm using redux toolkit to update state changes.
+    },[filteredList]) // I don't need this anymore since now i'm using redux toolkit to update state changes. Now i need to update this part of the code.
 
     const handleMonthChange = (newMonth: string) => {
         setCurrentMonth(newMonth)

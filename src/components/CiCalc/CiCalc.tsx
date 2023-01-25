@@ -60,8 +60,7 @@ type SimulationFormProps = FormData & {
     updateFields: (fields: Partial<FormData>) => void 
 }
 
-export function CiForm({amount, howLongM, investment, interestRate, updateFields} : SimulationFormProps){
-    
+export function CiForm({amount, howLongM, investment, interestRate, updateFields} : SimulationFormProps){   
     return(
         <div>
             <p className="mb-4 text-center" style={{margin: '1vh 1vw'}}><strong>Compound Interest Calculator.</strong></p>
