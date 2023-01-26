@@ -49,7 +49,7 @@ export default function AddExpense({ onAdd }: {onAdd: (expense: Expense) => void
   
   return(
       <div className='info-area-container d-flex align-items-center flex-wrap' style={{padding: '1vh 1vw'}}>
-        <div className='d-flex justify-content-around w-50'>
+        <div className='d-flex justify-content-around w-100'>
           <div>
               <div className='text-center'><strong>Date</strong></div>
               <input type="date" value={dateField} onChange={e => setDateField(e.target.value)}></input>
