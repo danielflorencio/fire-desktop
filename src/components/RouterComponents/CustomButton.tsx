@@ -13,7 +13,7 @@ export default function CustomButton({to, name, icon}: Props ){
     return(
     <li>
         <Link to={to} className={isActive ? 'nav-link active' : 'nav-link text-white'}>
-        <svg className="bi d-block mx-auto mb-1" width="24" height="24">{icon}</svg>
+        <svg className="bi d-block mx-auto mb-1" width="22" height="22">{icon}</svg>
         {name}
         </Link>
     </li>
