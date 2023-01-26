@@ -9,6 +9,7 @@ import SiCalculator from './components/SiCalc/SiCalc';
 import { useMediaQuery } from 'react-responsive';
 import Navbar from './components/Navbar/Navbar';
 import IndexStockMarket from './components/StockMarket/IndexStockMarket';
+import PortfolioFooter from './components/PortfolioFooter/PortfolioFooter';
 // import PortfolioFooter from './components/PortfolioFooter/PortfolioFooter';
 export default function App() {  
   const isSmallScreen = useMediaQuery({ query: '(max-width: 968px)' });
@@ -17,6 +18,7 @@ export default function App() {
     <div className='app-container'>
       {isSmallScreen ? <Navbar/> : <Sidebar/>}
       <main className={isSmallScreen ? '' : 'overflow-auto'}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
         <div className='main-content-container'>
           <Routes>
             <Route path='fire_advisor' element={<HomePage/>}/>
@@ -26,6 +28,8 @@ export default function App() {
             <Route path='fire_advisor/calculators/simple_interest_calculator' element={<SiCalculator/>}/>
             <Route path='fire_advisor/stock-market' element={<IndexStockMarket/>}/>
           </Routes>
+        </div>
+        <PortfolioFooter/>
         </div>
       </main>
     </div>
