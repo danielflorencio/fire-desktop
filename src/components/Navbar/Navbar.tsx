@@ -5,7 +5,7 @@ import { BsFillFileBarGraphFill } from 'react-icons/bs'
 export default function Navbar(){
     return(
         <header>
-        <div className="px-2 py-2 text-bg-dark">
+        <div className="py-2 text-bg-dark">
           <div className="container">
             <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <a href="/" className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
