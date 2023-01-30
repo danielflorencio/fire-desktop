@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { StockData } from './IndexStockMarket';
+import { StockData } from '..';
 
 interface ShowStocksProps {
   stocksToSearch: StockData[],

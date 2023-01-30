@@ -1,6 +1,6 @@
 import { useState } from "react";
-// import ChooseStocks from "./ChooseStocks";
-// import ShowStocks from "./ShowStockMarket";
+// import ChooseStocks from "./components/ChooseStocks";
+// import ShowStocks from "./components/ShowStockMarket";
 import { useMediaQuery } from 'react-responsive'
 export interface StockData {
     symbol: string;
@@ -8,7 +8,7 @@ export interface StockData {
     change: number;
     changePercent: number;
 }
-export default function IndexStockMarket(){
+export default function StockMarket(){
     const isSmallScreen = useMediaQuery({ query: '(max-width: 568px)' });
     const [stocksToSearch, setStocksToSearch] = useState<StockData[]>([])
     const apiKey = '';

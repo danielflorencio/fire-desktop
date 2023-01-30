@@ -1,8 +1,8 @@
 import './styles.css'
 import {AiFillFire} from 'react-icons/ai'
 import { IconContext } from "react-icons";
-import BalanceInfo from './BalanceInfo'
-export default function HomePage(){    
+import BalanceInfo from './components/BalanceInfo'
+export default function Home(){    
     return( 
         <>
             <div className='header-container'>

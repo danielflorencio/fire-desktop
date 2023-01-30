@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../hooks';
+import { useAppSelector } from '../../../hooks';
 export default function BalanceInfo({title, status}: {title: string, status: string}){
     const value = useAppSelector(state => state.expenses.totalBalance); 
     return(

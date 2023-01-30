@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react";
-import { StockData } from "./IndexStockMarket";
+import { StockData } from "..";
 interface ChooseStocksProps {
     stocksToSearch: StockData[],
     setStocksToSearch: React.Dispatch<React.SetStateAction<StockData[]>>,

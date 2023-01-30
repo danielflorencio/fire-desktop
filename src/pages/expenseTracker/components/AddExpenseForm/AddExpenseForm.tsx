@@ -1,7 +1,7 @@
 import {useState} from 'react'
-import { Expense } from '../../types/expense';
-import { categories } from '../../data/categories';
-import { newDateAdjusted } from '../../helpers/dateFilter';
+import { Expense } from '../../../../types/expense';
+import { categories } from '../../../../data/categories';
+import { newDateAdjusted } from '../../../../helpers/dateFilter';
 import { useMediaQuery } from 'react-responsive';
 
 export default function AddExpense({ onAdd }: {onAdd: (expense: Expense) => void}){
@@ -79,13 +79,7 @@ export default function AddExpense({ onAdd }: {onAdd: (expense: Expense) => void
             <input type="number" className='w-100' value={valueField} onChange={e => setValueField(parseFloat(e.target.value))}></input>
             </div>
           </div>
-              
-          
 
-          
-              
-              
-          
           <div className='w-100 d-flex align-items-center justify-content-center'>
               
             <br></br>

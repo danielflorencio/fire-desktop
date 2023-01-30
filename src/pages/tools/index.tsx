@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-export default function CalculatorsPage(){
+export default function Tools(){
     return(
         <div className="d-flex flex-wrap justify-content-center">
             <div style={{maxWidth: '22rem'}} className="shadow-lg px-4 pt-4 pb-5 m-4 bg-white rounded">

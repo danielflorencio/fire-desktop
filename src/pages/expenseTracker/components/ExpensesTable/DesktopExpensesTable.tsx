@@ -1,7 +1,7 @@
 import './DesktopExpensesTableStyles.css'
-import { Expense } from '../../types/expense'
-import { formatDate } from '../../helpers/dateFilter'
-import { categories } from '../../data/categories'
+import { Expense } from '../../../../types/expense'
+import { formatDate } from '../../../../helpers/dateFilter'
+import { categories } from '../../../../data/categories'
 
 export const DesktopExpensesTable = ({list}: {list: Expense[]}) => {
     return(

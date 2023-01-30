@@ -1,6 +1,6 @@
 import { useState, FormEvent } from "react"
-import { useMultiStepForm } from "../../customHooks/useMultiStepForm";
-import CiGraph from '../AnswerGraph/CiGraph'
+import { useMultiStepForm } from "../../../../customHooks/useMultiStepForm";
+import CiGraph from './CiGraph'
 
 export type FormData = {
     amount: number,

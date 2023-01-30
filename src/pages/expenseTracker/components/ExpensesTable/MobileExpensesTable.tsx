@@ -1,7 +1,7 @@
-import { Expense } from '../../types/expense'
-import { formatDate } from '../../helpers/dateFilter'
-import { categories } from '../../data/categories'
-import getCategoryIcon from '../../helpers/getCategoryIcon'
+import { Expense } from '../../../../types/expense'
+import { formatDate } from '../../../../helpers/dateFilter'
+import { categories } from '../../../../data/categories'
+import getCategoryIcon from '../../../../helpers/getCategoryIcon'
 
 export const MobileExpensesTable = ({list}: {list: Expense[]}) => {
     return(
