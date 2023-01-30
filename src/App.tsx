@@ -12,7 +12,6 @@ import { useMediaQuery } from 'react-responsive';
 import PortfolioFooter from './components/PortfolioFooter/PortfolioFooter';
 export default function App() {  
   const isSmallScreen = useMediaQuery({ query: '(max-width: 968px)' });
-
   return (
     <div className='app-container'>
       {isSmallScreen ? <Navbar/> : <Sidebar/>}

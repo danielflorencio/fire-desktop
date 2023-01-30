@@ -1,6 +1,5 @@
 import './styles.css'
-import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
-import { BsFillArrowRightCircleFill} from 'react-icons/bs'
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib'
 type Props = {
     currentMonth: string,

@@ -4,11 +4,14 @@ export const getCurrentMonth = (): string => {
     return `${now.getFullYear()}-${now.getMonth()+1}`
 }
 
+export const getCurrentMonthNumber = (): number => {
+    let now = new Date();
+    return now.getMonth();
+}
+
 export const filterListByMonth = (list: Expense[], date: string): Expense[] => { 
     let newList: Expense[] = [];
-    
     let [year, month] = date.split('-');
-    
     for (let i in list){
         if(
             (list[i].date.getFullYear()) === parseInt(year) &&
@@ -19,9 +22,6 @@ export const filterListByMonth = (list: Expense[], date: string): Expense[] => {
     }
     return newList;
 }
-
-// Typescript function skeleton
-// export const name = (variable: type, variable: type): return type => {actual function} 
 
 export const formatDate = (date: Date): string => {
     let year = date.getFullYear();
