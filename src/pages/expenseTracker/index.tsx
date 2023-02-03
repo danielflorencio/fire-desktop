@@ -48,7 +48,8 @@ export default function ExpenseTracker(){
         expense={expense}
         />    
         <AddExpense onAdd={handleAddExpense}/>  
-        {isSmallScreen ? <MobileExpensesTable list={filteredList}/> : <DesktopExpensesTable list={filteredList}/>}
+        {/* {isSmallScreen ? <MobileExpensesTable list={filteredList}/> : <DesktopExpensesTable list={filteredList}/>} */}
+        <MobileExpensesTable list={filteredList}/>
     </>
     )
 }

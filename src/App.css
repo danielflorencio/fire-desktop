@@ -114,3 +114,6 @@ h1, h2, h3{font-weight: 520;}
 .h-fit{
     height: fit-content;
 }
+.max-w-sm{
+    max-width: 400px;
+}

@@ -30,7 +30,6 @@ export default function CiCalculator(){
     <CiForm {...data} updateFields={updateFields}/>, 
     <CiGraph {...data} />])
  
-    
     function handleSubmit(e: FormEvent){
         e.preventDefault()
         next()

@@ -1,9 +1,7 @@
-import { AiFillHome } from 'react-icons/ai'
+import { AiFillHome, AiFillCalculator, AiFillFire } from 'react-icons/ai'
 import { FaMoneyBillWave } from 'react-icons/fa'
-import {AiFillCalculator, AiFillFire} from 'react-icons/ai'
-import CustomLink  from '../RouterComponents/CustomLink'
 import { BsFillFileBarGraphFill } from 'react-icons/bs'
-
+import CustomLink  from '../RouterComponents/CustomLink'
 export default function Sidebar(){
     return(
         <div style={{width: '200px'}} className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark overflow-hidden">

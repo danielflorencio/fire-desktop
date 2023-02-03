@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import { Expense } from '../../../../types/expense';
 import { categories } from '../../../../data/categories';
 import { newDateAdjusted } from '../../../../helpers/dateFilter';
@@ -111,7 +111,5 @@ export default function AddExpense({ onAdd }: {onAdd: (expense: Expense) => void
           </div>
       </div>
     )
-  }
-  
-  
+  } 
 }

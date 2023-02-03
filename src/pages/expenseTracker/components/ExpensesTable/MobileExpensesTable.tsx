@@ -8,7 +8,7 @@ export const MobileExpensesTable = ({list}: {list: Expense[]}) => {
         <>
             {
                 list.map((expense, index) =>(
-                    <div key={index} className='table h-5rem d-flex'>
+                    <div key={index} className='table info-area-container max-w-sm h-5rem d-flex'> {/** I gotta change this info-area-container class name */}
                         <div className='w-25 h-100 d-flex justify-content-center align-items-center'>
                             <div style={{backgroundColor: `${categories[expense.category].bgColor}`}} className='w-75 h-75 rounded d-flex justify-content-center align-items-center'>
                                 {getCategoryIcon((categories[expense.category].categoryId))}

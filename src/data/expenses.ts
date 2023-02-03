@@ -8,5 +8,8 @@ export const expenses: Expense[] = [
     { date: new Date(2022, 10, 6), category: 'rent', title: 'Apartment', value: 8.8 },
     { date: new Date(2023, 0, 2), category: 'rent', title: 'Apartment', value: 200 },
     { date: new Date(2023, 0, 3), category: 'food', title: 'Fish', value: 8.8 },
-    { date: new Date(2023, 0, 7), category: 'salary', title: 'Web Development', value: 1000 }
+    { date: new Date(2023, 0, 7), category: 'salary', title: 'Web Development', value: 1000 },
+    { date: new Date(2023, 1, 7), category: 'salary', title: 'Web Development', value: 2000 },
+    { date: new Date(2023, 1, 7), category: 'salary', title: 'Web Development', value: 2000 },
+    { date: new Date(2023, 1, 7), category: 'salary', title: 'Web Development', value: 2000 },
 ];
