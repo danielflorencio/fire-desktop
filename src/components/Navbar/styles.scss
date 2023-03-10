@@ -1,0 +1,12 @@
+.navbar{
+
+}
+
+@media (max-width: 968px) {
+    .navbar{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}

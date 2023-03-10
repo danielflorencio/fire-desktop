@@ -9,11 +9,8 @@ import { useDispatch } from 'react-redux';
 import { addExpense } from '../../features/balance/balanceSlice'
 import { useAppSelector } from '../../hooks'
 import { getMonthExpenses, getMonthIncomes } from '../../helpers/getBalanceInfo'
-import { useMediaQuery } from 'react-responsive'
 export default function ExpenseTracker(){
  
-    const isSmallScreen = useMediaQuery({ query: '(max-width: 968px)' });    
-
     const [filteredList, setFilteredList] = useState<Expense[]>([]);
     const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
     const [income, setIncome] = useState(0);
@@ -48,8 +45,9 @@ export default function ExpenseTracker(){
         expense={expense}
         />    
         <AddExpense onAdd={handleAddExpense}/>  
-        {/* {isSmallScreen ? <MobileExpensesTable list={filteredList}/> : <DesktopExpensesTable list={filteredList}/>} */}
-        <MobileExpensesTable list={filteredList}/>
+        <div className='d-flex flex-wrap w-90 justify-content-between'>
+            <MobileExpensesTable list={filteredList}/>
+        </div>    
     </>
     )
 }
