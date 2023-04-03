@@ -2,6 +2,7 @@ import './styles.css'
 import {AiFillFire} from 'react-icons/ai'
 import { IconContext } from "react-icons";
 import BalanceInfo from './components/BalanceInfo'
+import PreviewInfo from './components/PreviewInfo';
 export default function Home(){    
     return( 
         <>
@@ -21,8 +22,10 @@ export default function Home(){
                     <BalanceInfo title='Current Balance' status=''/>
                 </div>
                 <div className="option-container">
+                    {/* <BalanceInfo title='Next Month Preview Balance' status=''/> */}
                     <h3>Next Month Previewed Balance</h3>
-                    <p style={{color: 'green'}}>In development.</p>
+                    <PreviewInfo/>
+                    {/* <p style={{color: 'green'}}>In development.</p> */}
                 </div>
                 <div className="option-container">
                     <h3>Next Year Previewed Balance</h3>
@@ -30,6 +33,7 @@ export default function Home(){
                 </div>
                 <div className="option-container">
                     <h3>Your Networth has increased: </h3>
+                    
                     <p>X % since last month</p>
                     <p>Y % since last 6 months.</p>
                     <p>Z % since last year</p>
