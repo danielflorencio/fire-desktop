@@ -1,7 +1,6 @@
 import { Expense } from '../../types/expense'
 import { useState, useEffect } from 'react'
 import { getCurrentMonth, filterListByMonth } from '../../helpers/dateFilter'
-import { DesktopExpensesTable } from './components/ExpensesTable/DesktopExpensesTable'
 import { MobileExpensesTable } from './components/ExpensesTable/MobileExpensesTable'
 import AddExpense from './components/AddExpenseForm/AddExpenseForm'
 import InfoArea from './components/InfoArea/InfoArea'
@@ -26,7 +25,7 @@ export default function ExpenseTracker(){
     useEffect(() => { // This useEffect Detects when a new expense is added (filteredList state) and resets the income and expenses value that goes to the InfoArea component.
         setIncome(getMonthIncomes(filteredList));
         setExpense(getMonthExpenses(filteredList))
-    },[filteredList]) // I don't need this anymore since now i'm using redux toolkit to update state changes. Now i need to update this part of the code.
+    }, [filteredList]) // I must now update this code so it doesn't have these useffects now that i'm using redux toolkit to update state changes.
 
     const handleMonthChange = (newMonth: string) => {
         setCurrentMonth(newMonth)

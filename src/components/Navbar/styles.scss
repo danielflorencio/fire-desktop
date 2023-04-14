@@ -1,5 +1,95 @@
-.navbar{
+.navigators-container{
+    display: flex;
+    flex-direction: row;
+}
+.sidebar-positioning{
+    // position: absolute;
+}
+.upper-navbar{
+    padding: 0.5rem;
+    color: white;
+    width: 100%;
+    background-color: #212529;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+}
+.icon{
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+.profile-icon{
+    border-radius: 100%;
+}
+.svg-size{
+    height: 16px;
+    width: 16px;
+}
+// .sidebar{
+//     // position: fixed;
+//     // top: 0;
+//     // left: 0;
+//     // bottom: 0;
+//     width: 200px;
+//     background-color: #f2f2f2;
+//     transition: margin-left 0.3s ease-out;
+// }
+.sidebar{
+    // position: fixed;
+}
+.sidebar-move-right {
+    animation-name: move-right;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    width: 200px;
+    // display: block;
+}
+.sidebar-move-left{
+    animation-name: move-left;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    width: 0px;
+    animation-fill-mode: forwards;
+    // display: none;
+    // display: none;
+}
+// .sidebar{
+//     width: 200px;
+// }
+// .sidebar-display{
+//     display: contents;
+// }
+// .sidebar-display-none{
+//     display: none;
+// }
+@keyframes move-right {
+    0% {
+        width: 0px;
+        // display: block;
+    }
+    100% {width: 200px;}
 
+}
+
+@keyframes move-left {
+    0% {
+        width: 200px;
+        visibility: visible;
+    }
+    40%{
+        opacity: 0.5;
+    }
+    60%{
+        opacity: 1;
+        visibility: hidden;
+    }
+    100% {
+        width: 0px;
+        // opacity: 100%;
+        // display: none;
+        visibility: hidden;
+    }
 }
 
 @media (max-width: 968px) {
