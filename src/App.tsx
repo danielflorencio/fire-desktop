@@ -17,12 +17,12 @@ export default function App() {
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
           <div className='main-content-container'>
             <Routes>
-              <Route path='fire_advisor' element={<Home/>}/>
-              <Route path='fire_advisor/expenses' element={<ExpenseTracker/>}/>
-              <Route path='fire_advisor/calculators' element={<Tools/>}/>
-              <Route path='fire_advisor/calculators/compound_interest_calculator' element={<CiCalculator/>}/>
-              <Route path='fire_advisor/calculators/simple_interest_calculator' element={<SiCalculator/>}/>
-              <Route path='fire_advisor/stock-market' element={<StockMarket/>}/>
+              <Route path='fire-desktop' element={<Home/>}/>
+              <Route path='fire-desktop/expenses' element={<ExpenseTracker/>}/>
+              <Route path='fire-desktop/calculators' element={<Tools/>}/>
+              <Route path='fire-desktop/calculators/compound_interest_calculator' element={<CiCalculator/>}/>
+              <Route path='fire-desktop/calculators/simple_interest_calculator' element={<SiCalculator/>}/>
+              <Route path='fire-desktop/stock-market' element={<StockMarket/>}/>
             </Routes>
           </div>
           <PortfolioFooter/>

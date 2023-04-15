@@ -11,10 +11,10 @@ export default function Sidebar({isOpen}: {isOpen: boolean}){
             </a>
             <hr/>
             <ul className="nav nav-pills flex-column mb-auto">
-            <CustomLink to='/fire_advisor' name='Home' icon={<AiFillHome/>}/>
-            <CustomLink to='/fire_advisor/expenses' name='Expenses' icon={<FaMoneyBillWave/>}/>
-            <CustomLink to='/fire_advisor/calculators' name='Calculators' icon={<AiFillCalculator/>}/>
-            <CustomLink to='/fire_advisor/stock-market' name='Stock Market' icon={<BsFillFileBarGraphFill/>}/>
+            <CustomLink to='/fire-desktop' name='Home' icon={<AiFillHome/>}/>
+            <CustomLink to='/fire-desktop/expenses' name='Expenses' icon={<FaMoneyBillWave/>}/>
+            <CustomLink to='/fire-desktop/calculators' name='Calculators' icon={<AiFillCalculator/>}/>
+            <CustomLink to='/fire-desktop/stock-market' name='Stock Market' icon={<BsFillFileBarGraphFill/>}/>
             </ul>
             <hr/>
         </div>
