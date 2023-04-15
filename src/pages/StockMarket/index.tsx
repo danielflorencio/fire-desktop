@@ -8,7 +8,6 @@ export interface StockData {
     changePercent: number;
 }
 export default function StockMarket(){
-    // const isSmallScreen = useMediaQuery({ query: '(max-width: 568px)' });
     const [stocksToSearch, setStocksToSearch] = useState<StockData[]>([])
     const apiKey = '';
 
