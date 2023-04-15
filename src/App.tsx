@@ -1,5 +1,4 @@
 import './App.css'
-import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import { Route, Routes} from 'react-router-dom'
 import Home from './pages/home';
@@ -8,14 +7,11 @@ import Tools from './pages/tools';
 import CiCalculator from './pages/tools/components/CiCalc/CiCalc';
 import SiCalculator from './pages/tools/components/SiCalc/SiCalc';
 import StockMarket from './pages/StockMarket';
-import { useMediaQuery } from 'react-responsive';
 import PortfolioFooter from './components/PortfolioFooter/PortfolioFooter';
 export default function App() {  
   // const isSmallScreen = useMediaQuery({ query: '(max-width: 968px)' });
   return (
     <div className='app-container'>
-      {/* {isSmallScreen ? <Navbar/> : <Sidebar/>} */}
-      {/* <main className={isSmallScreen ? '' : 'overflow-auto'}> */}
       <Navbar>
         <main>
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
@@ -32,8 +28,7 @@ export default function App() {
           <PortfolioFooter/>
           </div>
         </main>
-      </Navbar>
-      
+      </Navbar>     
     </div>
   )
 }

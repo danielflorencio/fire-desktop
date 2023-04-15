@@ -2,9 +2,6 @@
     display: flex;
     flex-direction: row;
 }
-.sidebar-positioning{
-    // position: absolute;
-}
 .upper-navbar{
     padding: 0.5rem;
     color: white;
@@ -26,18 +23,6 @@
     height: 16px;
     width: 16px;
 }
-// .sidebar{
-//     // position: fixed;
-//     // top: 0;
-//     // left: 0;
-//     // bottom: 0;
-//     width: 200px;
-//     background-color: #f2f2f2;
-//     transition: margin-left 0.3s ease-out;
-// }
-.sidebar{
-    // position: fixed;
-}
 .sidebar-move-right {
     animation-name: move-right;
     animation-duration: 0.8s;
@@ -51,22 +36,10 @@
     animation-timing-function: ease-out;
     width: 0px;
     animation-fill-mode: forwards;
-    // display: none;
-    // display: none;
 }
-// .sidebar{
-//     width: 200px;
-// }
-// .sidebar-display{
-//     display: contents;
-// }
-// .sidebar-display-none{
-//     display: none;
-// }
 @keyframes move-right {
     0% {
         width: 0px;
-        // display: block;
     }
     100% {width: 200px;}
 
@@ -86,8 +59,6 @@
     }
     100% {
         width: 0px;
-        // opacity: 100%;
-        // display: none;
         visibility: hidden;
     }
 }

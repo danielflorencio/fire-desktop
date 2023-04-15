@@ -17,7 +17,7 @@ export default function Navbar({children}: { children: ReactNode; }){
 
     return(
         <div style={{display: 'flex', width: '100%'}}>
-            <div className={isOpen ? 'sidebar-move-right sidebar' : ' sidebar sidebar-move-left'}>
+            <div className={isOpen ? 'sidebar-move-right' : 'sidebar-move-left'}>
             <Sidebar isOpen={isOpen}/>
             </div>
             <div style={{width: '100%'}}>
