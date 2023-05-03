@@ -1,6 +1,6 @@
 import './App.css'
 import Navbar from './components/Navbar';
-import { Route, Routes} from 'react-router-dom'
+import { Route, Router, Routes} from 'react-router-dom'
 import Home from './pages/home';
 import ExpenseTracker from './pages/expenseTracker';
 import Tools from './pages/tools';
@@ -28,7 +28,7 @@ export default function App() {
           <PortfolioFooter/>
           </div>
         </main>
-      </Navbar>     
+      </Navbar>
     </div>
   )
 }

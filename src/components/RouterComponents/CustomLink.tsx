@@ -19,11 +19,3 @@ export default function CustomLink({to, name, icon}: Props ){
         </li>
     )
 }   
-
-
-{/* <li>
-<Link to={to} className={isActive ? 'nav-link active' : 'nav-link text-white'}>
-<svg className="bi pe-none me-2" width="16" height="16">{icon}</svg>
-{name}
-</Link>
-</li> */}
